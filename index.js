@@ -1,88 +1,56 @@
-// In JavaScript, comparison operators are used to compare values and return a boolean(true / false) value based on the comparison result.
+// In JavaScript, logical operators are used to combine two or more conditions and return a boolean(true / false) value based on the result of the logical operation.
 
-// Here are some commonly used comparison operators in JavaScript:
+// Here are some commonly used logical operators in JavaScript:
 
-// Equal to(==): This operator checks if two values are equal.If they are, it returns true, otherwise false.
+// AND(&&): This operator returns true if both conditions are true, otherwise false.
+   
+console.log(5 > 3 && 5 < 7); // true
+console.log(5 > 7 && 5 < 3); // false
+console.log(5 > 7 && 5 > 3); // false
+
+// OR(||): This operator returns true if at least one of the conditions is true, otherwise false.
   
 
-// 👀👀
-console.log(5 == 5); // true
-console.log('5' == 5); // true
-console.log(5 == 6); // false
+console.log(5 > 3 || 5 < 3); // true
+console.log(5 > 7 || 5 < 3); // false
+console.log(5 > 7 || 5 > 3); // false
 
-// Strict equal to(===): This operator checks if two values are equal and of the same type.If they are, it returns true, otherwise false.
-// 👀👀
+// NOT(!): This operator negates the condition, meaning if the condition is true, it returns false, and if the condition is false, it returns true.
+   
+console.log(!(5 > 3)); // false
+console.log(!(5 < 3)); // true
 
-console.log(5 === 5); // true
-console.log('5' === 5); // false
-console.log(5 === 6); // false
+// Short - circuit evaluation: In JavaScript, logical operators are also used for short - circuit evaluation.This means that if the first condition in an AND(&&) operation is false, the second condition is not evaluated, since the whole operation would already be false.Similarly, if the first condition in an OR(||) operation is true, the second condition is not evaluated, since the whole operation would already be true.
+  
+// In this example, the second condition is not evaluated
+console.log(false && (5 / 0)); // false
 
-// Not equal to(!=): This operator checks if two values are not equal.If they are not, it returns true, otherwise false.
-// 👀👀
-console.log(5 != 5); // false
-console.log('5' != 5); // false
-console.log(5 != 6); // true
-// Strict not equal to(!==): This operator checks if two values are not equal and of the same type.If they are not, it returns true, otherwise false.
+// In this example, the second condition is not evaluated
+console.log(true || (5 / 0)); // true
 
-  // 👀👀
-
-console.log(5 !== 5); // false
-console.log('5' !== 5); // true
-console.log(5 !== 6); // true
-
-// Greater than(>): This operator checks if the first value is greater than the second value.If it is, it returns true, otherwise false.
-
-// 👀👀
-
-console.log(5 > 3); // true
-console.log(5 > 5); // false
-console.log(5 > 7); // false
-
-// Less than(<): This operator checks if the first value is less than the second value.If it is, it returns true, otherwise false.
-
-// 👀👀
-
-console.log(5 < 7); // true
-console.log(5 < 5); // false
-console.log(5 < 3); // false
-
-// Greater than or equal to(>=): This operator checks if the first value is greater than or equal to the second value.If it is, it returns true, otherwise false.
-
-// 👀👀
-
-console.log(5 >= 3); // true
-console.log(5 >= 5); // true
-console.log(5 >= 7); // false
-
-// Less than or equal to(<=): This operator checks if the first value is less than or equal to the second value.If it is, it returns true, otherwise false.
-
-// 👀👀
-
-console.log(5 <= 7); // true
-console.log(5 <= 5); // true
-console.log(5 <= 3); // false
+// It's worth noting that the logical operators in JavaScript do not always return a boolean value. They may also return the value of one of their operands, depending on the context. For example, the AND (&&) operator returns the first value if it is falsy, otherwise it returns the second value. The OR (||) operator returns the first value if it is truthy, otherwise it returns the second value. This behavior is sometimes used for short-circuiting or for assigning default values to variables.
 
 
 
-function compareNumbers(num1, num2) {
-  let result = "";
+function checkBooleans(bool1, bool2) {
+    let result = "";
 
-  if (num1 > num2) {
-    result = `${num1} is greater than ${num2}`;
-  } else if (num1 < num2) {
-    result = `${num1} is less than ${num2}`;
-  } else {
-    result = `${num1} is equal to ${num2}`;
-  }
+    if (bool1 && bool2) {
+        result = "Both values are true";
+    } else if (bool1 || bool2) {
+        result = "At least one value is true";
+    } else {
+        result = "Both values are false";
+    }
 
-  return result;
+    return result;
 }
 
-console.log(compareNumbers(5, 10));
-// Output: "5 is less than 10"
+console.log(checkBooleans(true, true));
+// Output: "Both values are true"
 
-console.log(compareNumbers(10, 5));
-// Output: "10 is greater than 5"
+console.log(checkBooleans(true, false));
+// Output: "At least one value is true"
 
-console.log(compareNumbers(5, 5));
-// Output: "5 is equal to 5"
+console.log(checkBooleans(false, false));
+// Output: "Both values are false"
