@@ -1,100 +1,74 @@
-// In JavaScript, conditionals are used to execute certain code blocks based on whether a certain condition is true or false.The most common types of conditionals in JavaScript are if statements, if-else statements, and switch statements.
+// The ternary operator is a concise way to write a simple if-else statement in JavaScript.It takes three operands: a condition to evaluate, a value to return if the condition is true, and a value to return if the condition is false.
 
-// if statements
-// if statements are used to execute a block of code if a certain condition is true.
+// The syntax for the ternary operator is as follows:
+
+
+// condition ? value_if_true : value_if_false
+
+// Here's an example:
+
+
+// let age = 18;
+// let message = age >= 18 ? "You are an adult" : "You are not an adult";
+// console.log(message);
+
+// In this example, the condition is age >= 18, which checks if the age variable is greater than or equal to 18. If the condition is true, the value returned is "You are an adult".If the condition is false, the value returned is "You are not an adult".
+
+// You can also nest ternary operators to create more complex expressions:
+
 
 // let num = 5;
-
-// if (num > 0) {
-//     console.log("The number is positive");
-// }
+// let message = num > 0 ? "Positive" : num < 0 ? "Negative" : "Zero";
+// console.log(message);
 
 
-// In this example, if the variable num is greater than 0, then the console will log the string "The number is positive".
 
-//  if -else statements
-// if-else statements are used to execute a block of code if a certain condition is true, and a different block of code if that condition is false.
 
-  
-// let num = -5;
+// const age = 18;
+// const isEligibleToVote = (age >= 18) ? "Yes" : "No";
+// console.log("Is the person eligible to vote?", isEligibleToVote); // output: Is the person eligible to vote? Yes
 
-// if (num > 0) {
-//     console.log("The number is positive");
-// } else {
-//     console.log("The number is not positive");
-// }
 
-// In this example, if the variable num is greater than 0, then the console will log the string "The number is positive".If the variable num is not greater than 0, then the console will log the string "The number is not positive".
 
-//     else -if statements
-// else -if statements are used to execute a block of code if a certain condition is true, and a different block of code if that condition is false, and another condition is true.
+// const age = 18;
+// const isCitizen = true;
+// const isEligibleToVote = (age >= 18) ? (isCitizen ? "Yes" : "No, not a citizen") : "No, too young";
+// console.log("Is the person eligible to vote?", isEligibleToVote); // output: Is the person eligible to vote? Yes
 
-let num = 0;
 
-if (num > 0) {
-    console.log("The number is positive");
-} else if (num < 0) {
-    console.log("The number is negative");
-} else {
-    console.log("The number is zero");
+
+// let age = 25;
+// let canDrinkAlcohol = age >= 21 ? "Yes" : "No";
+// console.log(canDrinkAlcohol); // Output: Yes
+
+
+// Write a ternary operator to check if a given number is even or odd
+function isEvenOrOdd(number) {
+  return number % 2 === 0 ? "even" : "odd";
 }
 
-// In this example, if the variable num is greater than 0, then the console will log the string "The number is positive".If the variable num is not greater than 0, but is less than 0, then the console will log the string "The number is negative".If the variable num is neither greater than 0 nor less than 0, then the console will log the string "The number is zero".
+// Test cases
+console.log(isEvenOrOdd(4)); // Output: even
+console.log(isEvenOrOdd(7)); // Output: odd
+console.log(isEvenOrOdd(0)); // Output: even
 
-// switch statements
-// switch statements are used to execute a block of code based on the value of a variable.
-
-   
-let dayOfWeek = "Monday";
-
-switch (dayOfWeek) {
-    case "Monday":
-        console.log("Today is Monday");
-        break;
-    case "Tuesday":
-        console.log("Today is Tuesday");
-        break;
-    case "Wednesday":
-        console.log("Today is Wednesday");
-        break;
-    case "Thursday":
-        console.log("Today is Thursday");
-        break;
-    case "Friday":
-        console.log("Today is Friday");
-        break;
-    default:
-        console.log("It's the weekend!");
-        break;
-}
-
-// In this example, if the variable dayOfWeek is "Monday", then the console will log the string "Today is Monday".If the variable dayOfWeek is "Tuesday", then the console will log the string "Today is Tuesday".The default case
+// Write a ternary operator to check if a user is logged in or not
+let isLoggedIn = true; // Change to false to test
+let message = isLoggedIn ? "Welcome back!" : "Please log in.";
+console.log(message); // Output: Welcome back! (if isLoggedIn is true), or Please log in. (if isLoggedIn is false)
 
 
 
-// Question:
-
-// Write a JavaScript function named checkNumber that takes in a single parameter called num.The function should check if num is positive, negative or zero, and return a corresponding message as follows:
-
-// If num is positive, return "The number is positive"
-// If num is negative, return "The number is negative"
-// If num is zero, return "The number is zero"
-// Your task is to implement this function using a conditional statement in JavaScript.
-
-    Answer:
+// Declare a variable called "isRaining" and set it to true.
+// Using a ternary operator, assign the value "umbrella" to a variable called "accessory" if it is raining, and "sunglasses" if it is not.
+// Console log the value of the "accessory" variable.
+//     Here's the code snippet:
 
 
-function checkNumber(num) {
-    if (num > 0) {
-        return "The number is positive";
-    } else if (num < 0) {
-        return "The number is negative";
-    } else {
-        return "The number is zero";
-    }
-}
+let isRaining = true;
+let accessory = isRaining ? "umbrella" : "sunglasses";
+console.log(accessory);
 
-// Example usage:
-console.log(checkNumber(5)); // Output: "The number is positive"
-console.log(checkNumber(-5)); // Output: "The number is negative"
-console.log(checkNumber(0)); // Output: "The number is zero"
+// When you run this code, it should log "umbrella" to the console, since "isRaining" is set to true.
+
+// You can modify the "isRaining" variable to false and run the code again to see if the value of "accessory" changes to "sunglasses".
