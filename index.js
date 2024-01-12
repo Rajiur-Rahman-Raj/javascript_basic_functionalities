@@ -1,95 +1,100 @@
-// Operator precedence in JavaScript determines the order in which operators are evaluated when an expression contains multiple operators. It is important to understand operator precedence in order to write expressions that produce the expected results.
+// In JavaScript, conditionals are used to execute certain code blocks based on whether a certain condition is true or false.The most common types of conditionals in JavaScript are if statements, if-else statements, and switch statements.
 
-// In JavaScript, operators have different levels of precedence, which determine the order in which they are evaluated. The operators with higher precedence are evaluated first. If operators have the same precedence, they are evaluated from left to right.
+// if statements
+// if statements are used to execute a block of code if a certain condition is true.
 
-// Here is a list of JavaScript operators, ordered by precedence from highest to lowest:
+// let num = 5;
 
-// Grouping operator: ()
-// Member access operator: . []
-// Computed member access operator: []
-// Function call operator: ()
-// new operator
-// Increment and decrement operators: ++ --
-// Logical NOT operator: !
-// Multiplication and division operators: * / %
-// Addition and subtraction operators: + -
-// Relational operators: < > <= >=
-// Equality operators: == !=
-// Strict equality operators: === !==
-// Logical AND operator: &&
-// Logical OR operator: ||
-// Conditional operator: ?:
-// Assignment operators: = += -= *= /= %=
-
-// Here's an example to illustrate how operator precedence works in JavaScript:
+// if (num > 0) {
+//     console.log("The number is positive");
+// }
 
 
+// In this example, if the variable num is greater than 0, then the console will log the string "The number is positive".
 
-var result = 5*3 + 10 * 2 ; // result will be 25, not 30
+//  if -else statements
+// if-else statements are used to execute a block of code if a certain condition is true, and a different block of code if that condition is false.
+
+  
+// let num = -5;
+
+// if (num > 0) {
+//     console.log("The number is positive");
+// } else {
+//     console.log("The number is not positive");
+// }
+
+// In this example, if the variable num is greater than 0, then the console will log the string "The number is positive".If the variable num is not greater than 0, then the console will log the string "The number is not positive".
+
+//     else -if statements
+// else -if statements are used to execute a block of code if a certain condition is true, and a different block of code if that condition is false, and another condition is true.
+
+let num = 0;
+
+if (num > 0) {
+    console.log("The number is positive");
+} else if (num < 0) {
+    console.log("The number is negative");
+} else {
+    console.log("The number is zero");
+}
+
+// In this example, if the variable num is greater than 0, then the console will log the string "The number is positive".If the variable num is not greater than 0, but is less than 0, then the console will log the string "The number is negative".If the variable num is neither greater than 0 nor less than 0, then the console will log the string "The number is zero".
+
+// switch statements
+// switch statements are used to execute a block of code based on the value of a variable.
+
+   
+let dayOfWeek = "Monday";
+
+switch (dayOfWeek) {
+    case "Monday":
+        console.log("Today is Monday");
+        break;
+    case "Tuesday":
+        console.log("Today is Tuesday");
+        break;
+    case "Wednesday":
+        console.log("Today is Wednesday");
+        break;
+    case "Thursday":
+        console.log("Today is Thursday");
+        break;
+    case "Friday":
+        console.log("Today is Friday");
+        break;
+    default:
+        console.log("It's the weekend!");
+        break;
+}
+
+// In this example, if the variable dayOfWeek is "Monday", then the console will log the string "Today is Monday".If the variable dayOfWeek is "Tuesday", then the console will log the string "Today is Tuesday".The default case
 
 
-// In this example, the multiplication operator (*) has higher precedence than the addition operator (+). So, 10 * 2 is evaluated first, resulting in 20. Then, the result of that operation is added to 5, resulting in 25.
 
-// You can use parentheses to change the order of evaluation in an expression:
+// Question:
 
+// Write a JavaScript function named checkNumber that takes in a single parameter called num.The function should check if num is positive, negative or zero, and return a corresponding message as follows:
 
-var result = (5 + 10) * 2; // result will be 30
+// If num is positive, return "The number is positive"
+// If num is negative, return "The number is negative"
+// If num is zero, return "The number is zero"
+// Your task is to implement this function using a conditional statement in JavaScript.
 
-// In this example, the addition operation is evaluated first because it is inside the parentheses. So, 5 + 10 results in 15. Then, the multiplication operator (*) is evaluated, resulting in 30.
-
-// I hope this explanation helps you understand operator precedence in JavaScript!
-
-
-
+    Answer:
 
 
+function checkNumber(num) {
+    if (num > 0) {
+        return "The number is positive";
+    } else if (num < 0) {
+        return "The number is negative";
+    } else {
+        return "The number is zero";
+    }
+}
 
-// Example 2: Logical AND and OR operators
-
-
-var result = true || false && true;
-console.log(result); // Output: true
-
-// In this example, the logical AND operator && has a higher precedence than the logical OR operator ||.However, the logical AND operator && is evaluated first due to the use of parentheses.The expression false && true inside the parentheses evaluates to false, but the OR operator || considers true to be a "truthy" value and returns true without evaluating the expression after it.So, the final result is true.
-
-//     Example 3: Unary operators
-
-
-var result = -5 + 10;
-console.log(result); // Output: 5
-// In this example, the unary minus operator - has a higher precedence than the addition operator +.The expression - 5 is evaluated first, resulting in -5. Then, the result of - 5 is added to 10, giving us the final result of 5.
-
-
-
-// 1. What is the value of x after the following expression is evaluated?
-var x = 10 * 2 + 5 / 5 - 3;
-// A. 18
-// B. 19
-// C. 20
-// D. 21
-// Answer: B. 18
-
-// 2. What is the value of y after the following expression is evaluated?
-var y = 5 + 2 * 3 % 2 - 1;
-// A. 5
-// B. 6
-// C. 1
-// D. 0
-// Answer: C. 1
-
-// 3. What is the value of z after the following expression is evaluated?
-var a = 10;
-var z = a++ * 2 - a-- * 3;  //11*2-9*3
-// A. -10
-// B. -5
-// C. 0
-// D. 5
-// Answer: A. -10
-
-// 4. What is the value of w after the following expression is evaluated?
-var w = 10 > 5 && 5 < 3 || 2 + 2 === 5;
-// A. true
-// B. false
-// C. undefined
-// D. null
-// Answer: B. false
+// Example usage:
+console.log(checkNumber(5)); // Output: "The number is positive"
+console.log(checkNumber(-5)); // Output: "The number is negative"
+console.log(checkNumber(0)); // Output: "The number is zero"
