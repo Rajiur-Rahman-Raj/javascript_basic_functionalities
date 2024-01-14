@@ -1,27 +1,31 @@
-// A closure is a feature in JavaScript that allows a function to access variables from an outer(enclosing) function, even after the outer function has returned.This means that the inner function "closes over" the variables of the outer function, creating a persistent reference to those variables.
+// Strict mode is a feature in JavaScript that enables a stricter parser and runtime behavior for your code.When you enable strict mode in your script, you tell the JavaScript engine to enforce a set of rules that help you write better and more secure code.
 
-// Here's an example to illustrate how closures work:
+// To enable strict mode, you simply include the string "use strict"; at the beginning of your script or a function.
 
+// Here are some of the behaviors that are affected by strict mode:
 
-// function outer() {
-//     const name = 'John';
+// with statements are not allowed
+// eval function has its own scope and cannot modify the outer scope
+// You cannot use undeclared variables
+// Function parameters must have unique names
+// Assignments to non - writable properties or non - existing properties will throw errors
+// Duplicate object property names are not allowed
+// The delete operator cannot be used on non - configurable properties
+// The this keyword is undefined in functions that are not called as methods
+// Using strict mode can help you catch errors and write more robust code, as it makes the behavior of your code more predictable and less error - prone.However, it can also break code that relies on non - standard behavior, so you should use it with caution and test your code thoroughly after enabling it.
 
-//     function inner() {
-//         console.log(`Hello, ${name}!`);
-//     }
+// Here's an example of how to enable strict mode in your script:
 
-//     return inner;
+// javascript
+// Copy code
+// "use strict";
+
+// function foo() {
+//     x = 10; // Throws an error because x is undeclared in strict mode
+//     console.log(this); // Outputs undefined because 'this' is undefined in strict mode
 // }
 
-// const greeting = outer();
-// greeting();
+// foo();
+// In this example, we include "use strict"; at the beginning of the script, and define a function foo. Inside the function, we try to assign a value to an undeclared variable, which throws an error in strict mode.We also log the value of this, which is undefined in strict mode when called as a standalone function.
 
-// In this example, we define two functions: outer and inner.outer declares a variable name and defines the inner function, which logs a message that uses the name variable.
-
-// The outer function returns the inner function, which is assigned to the greeting variable.Finally, we call the greeting function, which logs "Hello, John!" to the console.
-
-// Even though the outer function has returned and its variables should be out of scope, the inner function is still able to access the name variable.This is because the inner function has a closure over the name variable, creating a persistent reference to it.
-
-// Closures can be very powerful and useful in JavaScript, allowing you to create functions that have private variables and state that can be accessed and modified only by the function itself. They can also be used to create higher - order functions, which are functions that take other functions as arguments and / or return functions as their result.
-
-//     Overall, understanding closures is an important concept in JavaScript and can help you write more expressive and powerful code.
+// Overall, strict mode is a powerful tool for writing better and more secure JavaScript code, and can help catch errors and enforce best practices.
