@@ -1,14 +1,25 @@
-// Debugging a loop using VSCode and Node.js environment involves using the built -in debugging tools in VSCode to step through the loop and inspect the values of variables at each iteration.
+// In JavaScript, there are two types of data types: primitive and non - primitive.The main difference between them is how they are stored and accessed in memory.
 
-// Here are the steps to debug a loop in VSCode:
+// Primitive data types are simple and immutable data types that are stored directly in memory.They are called "primitive" because they represent basic values and cannot be broken down any further.There are five primitive data types in JavaScript:
 
-// Open the JavaScript file containing the loop in VSCode.
-// Set a breakpoint at the start of the loop by clicking on the left margin of the editor window, next to the line number where the loop starts.Alternatively, you can place the cursor on the line where you want to set the breakpoint and press F9.
-// Open the VSCode debugger by clicking on the Debug icon in the left - hand menu or pressing Ctrl + Shift + D.
-// Select the "Node.js" environment from the drop - down menu in the top menu bar of the debugger.
-// Start the debugger by clicking on the green "Start Debugging" button or pressing F5.
-// The program will start running and will stop at the breakpoint you set in step 2. You can now use the debugging tools in VSCode to step through the loop, inspect variable values, and make changes to the code if needed.
-// To step through the loop, use the Step Over button(F10) to execute the current line of code and move to the next one, or the Step Into button(F11) to move into a function call.
-// To inspect the values of variables at each iteration, use the Debug Console or the Variables panel in the VSCode debugger. You can view the value of a variable by hovering over it with the mouse or by clicking on it in the Variables panel.
-// To continue running the program after the loop has finished, use the Continue button(F5) or the Run button(Ctrl + F5).
-// Debugging a loop in VSCode can help you identify and fix bugs in your code more quickly and efficiently by allowing you to step through the loop and see what's happening at each iteration.
+// string: A sequence of characters, such as "hello" or "world".
+//number: A numeric value, such as 42 or 3.14.
+//boolean: A logical value that is either true or false.
+//null: A special value that represents "no value" or "nothing".
+//undefined: A special value that represents an undefined value or variable.
+
+// When a primitive data type is assigned to a variable, the actual value is stored directly in memory at the location of the variable.For example:
+
+
+// let x = 42; // x is assigned the value 42, which is a primitive data type
+
+// Non - primitive data types, on the other hand, are more complex data types that are stored as a reference to a location in memory.They are called "non-primitive" because they are made up of one or more primitive data types and can be broken down further.There is only one non - primitive data type in JavaScript, which is:
+
+// object: A collection of properties, where each property has a name and a value.
+
+// When a non - primitive data type is assigned to a variable, the variable stores a reference to the location in memory where the object is stored.For example:
+
+
+// let person = { name: "John", age: 30 }; // person is assigned a reference to an object, which is a non-primitive data type
+
+// In summary, primitive data types are simple and immutable values that are stored directly in memory, while non - primitive data types are more complex and are stored as a reference to a location in memory.Understanding the difference between them is important when working with data in JavaScript, as it affects how data is stored and accessed in memory.
