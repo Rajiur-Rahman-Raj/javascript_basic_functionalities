@@ -1,41 +1,51 @@
-// JavaScript provides a number of built -in methods that can be used to manipulate and work with strings.Here are some of the most commonly used string methods in JavaScript:
+// JavaScript provides a variety of built -in methods for working with dates.Here are some of the most commonly used date methods in JavaScript:
 
-// charAt(index): Returns the character at the specified index in a string.
+// new Date() : Creates a new Date object representing the current date and time.
 
-//concat(str1, str2, ...) : Combines two or more strings and returns a new string.
+//Date.parse(dateString) : Parses a string representing a date and time, and returns the number of milliseconds since January 1, 1970, 00: 00: 00 UTC.
 
-//indexOf(substr, start) : Returns the index of the first occurrence of a specified substring in a string.If the substring is not found, it returns - 1.
+//dateObj.getFullYear() : Returns the year(4 digits) of a Date object.
 
-// lastIndexOf(substr, start) : Returns the index of the last occurrence of a specified substring in a string.If the substring is not found, it returns - 1.
+//dateObj.getMonth() : Returns the month(0 - 11) of a Date object.
 
-// slice(start, end) : Extracts a section of a string and returns a new string.The extracted section starts at the specified start index and ends at the specified end index(but does not include the end index).
+//dateObj.getDate() : Returns the day of the month(1 - 31) of a Date object.
 
-//substring(start, end) : Similar to the slice() method, but does not allow negative indices.
+//dateObj.getDay() : Returns the day of the week(0 - 6) of a Date object, where Sunday is 0 and Saturday is 6.
 
-//replace(regexp, replacement) : Replaces a specified substring or regular expression with another string.
+//dateObj.getHours() : Returns the hour(0 - 23) of a Date object.
 
-//toLowerCase() : Converts a string to lowercase.
+//dateObj.getMinutes() : Returns the minute(0 - 59) of a Date object.
 
-//toUpperCase() : Converts a string to uppercase.
+//dateObj.getSeconds() : Returns the second(0 - 59) of a Date object.
 
-//trim() : Removes whitespace from both ends of a string.
+//dateObj.getMilliseconds() : Returns the millisecond(0 - 999) of a Date object.
 
-//split(separator, limit) : Splits a string into an array of substrings based on a specified separator.The limit parameter specifies the maximum number of splits to make.
+//dateObj.getTime() : Returns the number of milliseconds since January 1, 1970, 00: 00: 00 UTC.
 
-//length : Returns the length of a string.
+//dateObj.setTime(milliseconds) : Sets the Date object to the specified number of milliseconds since January 1, 1970, 00: 00: 00 UTC.
 
-// Here is an example of how to use some of these string methods in JavaScript:
+//dateObj.toDateString() : Returns the date portion of a Date object as a human - readable string.
+
+//dateObj.toTimeString() : Returns the time portion of a Date object as a human - readable string.
+
+//dateObj.toLocaleDateString() : Returns the date portion of a Date object as a localized string.
+
+//dateObj.toLocaleTimeString() : Returns the time portion of a Date object as a localized string.
+
+// Here is an example of how to use some of these date methods in JavaScript:
 
 
-// let str = "Hello, World!";
-// console.log(str.charAt(1)); // e
-// console.log(str.concat(" How are you?")); // Hello, World! How are you?
-// console.log(str.indexOf("World")); // 7
-// console.log(str.slice(0, 5)); // Hello
-// console.log(str.replace("World", "Universe")); // Hello, Universe!
-// console.log(str.toLowerCase()); // hello, world!
-// console.log(str.toUpperCase()); // HELLO, WORLD!
-// console.log(str.trim()); // Hello, World!
-// console.log(str.split(", ")); // ["Hello", "World!"]
-// console.log(str.length); // 13
-// By using these string methods, you can easily manipulate and work with strings in JavaScript.
+// let today = new Date();
+// console.log(today.getFullYear()); // 2023
+// console.log(today.getMonth()); // 2 (March - 0 based)
+// console.log(today.getDate()); // 27
+// console.log(today.getDay()); // 0 (Sunday)
+// console.log(today.getHours()); // 12
+// console.log(today.getMinutes()); // 30
+// console.log(today.getSeconds()); // 0
+// console.log(today.getTime()); // 1648433400000
+// console.log(today.toDateString()); // Sun Mar 27 2023
+// console.log(today.toTimeString()); // 12:30:00 GMT-0700 (Pacific Daylight Time)
+// console.log(today.toLocaleDateString()); // 3/27/2023
+// console.log(today.toLocaleTimeString()); // 12:30:00 PM
+// By using these date methods, you can easily manipulate and work with dates in JavaScript.
