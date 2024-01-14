@@ -1,34 +1,41 @@
-// 👀for-in loop:
-// The for-in loop is used to iterate over the properties of an object.It loops through all the enumerable properties of an object and executes the code block for each property.
+// In JavaScript, there are two ways to define functions: function expressions and function declarations.
 
-//     Here's an example:
+// Function Declaration:
+
+// A function declaration is a way to define a function in JavaScript using the function keyword, followed by the function name, the parameter list, and the function body enclosed in curly braces.Here's an example:
 
 
-// const person = {
-//     firstName: "John",
-//     lastName: "Doe",
-//     age: 30,
-//     gender: "male"
+// function add(a, b) {
+//     return a + b;
+// }
+
+// Function declarations are hoisted to the top of their scope, which means you can call the function before it's defined in the code:
+
+
+// console.log(add(2, 3)); // Output: 5
+
+// function add(a, b) {
+//     return a + b;
+// }
+// Function Expression:
+
+// A function expression is a way to define a function as a value assigned to a variable.Here's an example:
+
+
+// const add = function (a, b) {
+//     return a + b;
 // };
 
-// for (const property in person) {
-//     console.log(`${property}: ${person[property]}`);
-// }
-
-// In this example, the for-in loop is used to iterate over the properties of the person object.The loop variable property represents the name of each property, and person[property] represents the value of each property.The code block inside the loop logs each property name and value to the console.
-
-// 👀    for - of loop:
-// The for-of loop is used to iterate over iterable objects such as arrays, strings, and sets.It loops through each element of the iterable object and executes the code block for each element.
-
-//     Here's an example:
+// Function expressions are not hoisted to the top of their scope, which means you must define the function before you can call it:
 
 
-// const numbers = [1, 2, 3, 4, 5];
+// const result = add(2, 3); // Error: add is not defined
 
-// for (const number of numbers) {
-//     console.log(number);
-// }
+// const add = function (a, b) {
+//     return a + b;
+// };
 
-// In this example, the for-of loop is used to iterate over the elements of the numbers array.The loop variable number represents each element of the array.The code block inside the loop logs each element to the console.
 
-// The main difference between for-in and for-of loops is that for-in is used to iterate over the properties of an object, while for-of is used to iterate over the elements of an iterable object.It's important to choose the appropriate loop for the data structure you're working with.
+// One advantage of function expressions is that they can be used to create anonymous functions, which can be useful in certain situations, such as event handlers or callback functions.
+
+// In summary, function declarations are hoisted and can be called before they are defined, while function expressions are not hoisted and must be defined before they are called.Both function declarations and function expressions have their own use cases and are important tools in JavaScript programming.
