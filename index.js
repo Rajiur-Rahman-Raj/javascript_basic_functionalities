@@ -1,84 +1,52 @@
-/*
-In JavaScript, typeof is an operator that is used to determine the data type of a value or variable. It takes a single argument and returns a string indicating the data type of that argument.
+// Async / await is a syntax feature in JavaScript that allows you to write asynchronous code in a more synchronous style.It is built on top of promises, which are a way to handle asynchronous operations in JavaScript.
 
-For example, if you have a variable x that has the value of 5, you can use typeof x to determine that x is a number. Similarly, if you have a variable y that has the value of "Hello", you can use typeof y to determine that y is a string.
-
-Here are the possible return values of typeof:
-
-"undefined" if the value is undefined
-"boolean" if the value is a boolean
-"number" if the value is a number
-"string" if the value is a string
-"bigint" if the value is a BigInt
-"symbol" if the value is a symbol
-"object" if the value is an object (excluding null)
-"function" if the value is a function
-It's important to note that typeof null returns "object", which is a historical quirk in JavaScript that cannot be changed without breaking existing code.
-*/
+// Let's start with an example of a function that returns a promise:
 
 
-// In JavaScript, typeof is an operator that returns a string indicating the data type of its operand.The syntax of typeof is as follows:
+// function myPromiseFunction() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve("Hello world!");
+//         }, 1000);
+//     });
+// }
+
+// In this example, we define a function myPromiseFunction that returns a promise.The promise resolves after a delay of one second with the value "Hello world!".
+
+// Now let's use async/await to handle the promise:
 
 
-typeof operand
-// Here, the operand can be any expression, variable or literal value.The typeof operator returns one of the following string values:
+// async function myAsyncFunction() {
+//     const result = await myPromiseFunction();
+//     console.log(result);
+// }
 
-// "undefined" - If the operand is undefined.
-// "boolean" - If the operand is a boolean value.
-// "number" - If the operand is a number value.
-// "string" - If the operand is a string value.
-// "object" - If the operand is an object, array or null value.
-// "function" - If the operand is a function.
-// Here are some examples of using the typeof operator in JavaScript:
+// In this example, we define an async function myAsyncFunction. Inside the function, we use the await keyword to wait for the promise returned by myPromiseFunction to resolve.Once the promise resolves, we assign the result to a variable result.Finally, we log the result to the console.
 
+// The await keyword can only be used inside an async function, so we define myAsyncFunction as an async function.
 
-// Example 1: typeof with undefined
-var x;
-console.log(typeof x); // Output: "undefined"
-
-// Example 2: typeof with boolean
-var y = true;
-console.log(typeof y); // Output: "boolean"
-
-// Example 3: typeof with number
-var z = 10;
-console.log(typeof z); // Output: "number"
-
-// Example 4: typeof with string
-var str = "Hello, World!";
-console.log(typeof str); // Output: "string"
-
-// Example 5: typeof with object
-var obj = { name: "John", age: 30 };
-console.log(typeof obj); // Output: "object"
-
-// Example 6: typeof with null
-var nullValue = null;
-console.log(typeof nullValue); // Output: "object"
-
-// Example 7: typeof with function
-function add(a, b) {
-    return a + b;
-}
-console.log(typeof add); // Output: "function"
+// Here's an example of using try/catch with async/await:
 
 
-// What will be the output of the following code?
-var x;
-var y = true;
-var z = 10;
-var str = "Hello, World!";
-var obj = { name: "John", age: 30 };
-var nullValue = null;
-function add(a, b) {
-    return a + b;
-}
-console.log(typeof x); // A. "undefined"
-console.log(typeof y); // B. "boolean"
-console.log(typeof z); // C. "number"
-console.log(typeof str); // D. "string"
-console.log(typeof obj); // E. "object"
-console.log(typeof nullValue); // F. "object"
-console.log(typeof add); // G. "function"
-// Select the correct output for each console.log statement.
-// Answer: A. "undefined", B. "boolean", C. "number", D. "string", E. "object", F. "object", G. "function"
+// async function myAsyncFunction() {
+//     try {
+//         const result = await myPromiseFunction();
+//         console.log(result);
+//     } catch (error) {
+//         console.error(error);
+//     }
+// }
+
+// In this example, we use a try/catch block to handle any errors that may occur while waiting for the promise to resolve. If an error occurs, we log it to the console using console.error.
+
+// Async / await can also be used with multiple promises.Here's an example of using Promise.all with async/await:
+
+
+// async function myAsyncFunction() {
+//     const results = await Promise.all([myPromiseFunction1(), myPromiseFunction2(), myPromiseFunction3()]);
+//     console.log(results);
+// }
+
+// In this example, we use Promise.all to wait for all three promises to resolve before continuing.The results of all three promises are returned as an array, which we assign to a variable results.Finally, we log the results to the console.
+
+// Overall, async / await is a powerful feature in JavaScript that makes writing asynchronous code easier and more readable.
