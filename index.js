@@ -1,35 +1,42 @@
-// In JavaScript, the Number object is a built -in object that represents numerical values.It provides methods for performing mathematical operations on numbers, as well as for formatting and manipulating numbers.
+// In client - side JavaScript, the window object is a global object that represents the browser window or tab in which your JavaScript code is running.It provides access to various browser - related functions and properties.
 
-// Here are some of the most commonly used methods of the Number object in JavaScript:
+// Here are some commonly used properties and methods of the window object in JavaScript:
 
-// Number() : Converts a string or a variable to a number.
+// window.alert() : Displays an alert box with a message and an OK button.
 
-// Number.MAX_VALUE : Returns the largest possible number in JavaScript.
+// window.prompt() : Displays a dialog box that prompts the user for input.
 
-// Number.MIN_VALUE : Returns the smallest possible number in JavaScript.
+// window.confirm() : Displays a dialog box with a message and OK and Cancel buttons.
 
-// Number.NaN : Represents a value that is not a number.
+// window.innerWidth and window.innerHeight : Returns the width and height of the browser window, excluding the toolbar, menu, and scroll bars.
 
-// Number.isNaN(x) : Returns true if x is NaN, and false otherwise.
+// window.location : Returns an object that contains information about the current URL.
 
-// Number.parseFloat(str) : Converts a string to a floating - point number.
+// window.history : Provides access to the browser's session history, allowing you to navigate forward and backward through the user's history.
 
-// Number.parseInt(str) : Converts a string to an integer.
+// window.localStorage and window.sessionStorage : Allow you to store data on the client - side, which can be retrieved later even after the user closes and reopens the browser.
 
-// Number.prototype.toFixed(num) : Formats a number with a fixed number of decimal places.
+// window.setTimeout() and window.setInterval() : Allow you to execute a function after a specified delay, or at regular intervals.
 
-// Number.prototype.toPrecision(num) : Formats a number with a specified precision.
+// window.scrollTo() : Scrolls the window to a specified position.
 
-// Number.prototype.toString(radix) : Converts a number to a string, using the specified radix(base).
+// window.open() : Opens a new browser window or tab.
 
-// Here is an example of how to use some of these Number object methods in JavaScript:
+// Here is an example of how to use some of these window object properties and methods in JavaScript:
 
 
-// let num1 = Number("123");
-// let num2 = 123.456;
+// window.alert("Hello, world!");
+// let name = window.prompt("What is your name?");
+// let confirmed = window.confirm("Are you sure you want to delete this item?");
+// console.log(window.innerWidth, window.innerHeight);
+// console.log(window.location.href);
+// window.history.back();
+// window.localStorage.setItem("key", "value");
+// let timer = window.setTimeout(function () {
+//     console.log("Timeout fired!");
+// }, 5000);
+// window.scrollTo(0, 0);
+// window.open("https://www.example.com");
 
-// console.log(num1); // 123
-// console.log(num2.toFixed(2)); // 123.46
-// console.log(num2.toPrecision(3)); // 123
-// console.log(num2.toString(2)); // 1111011.01110110011001100110011001100110011001100110011010
-// By using the Number object and its methods, you can easily work with numerical values in JavaScript.
+
+// By using the window object and its properties and methods, you can interact with the browser window and provide a better user experience for your users.
