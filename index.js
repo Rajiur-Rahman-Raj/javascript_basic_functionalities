@@ -1,30 +1,29 @@
-// Template literals are a feature introduced in ES6(ECMAScript 2015) that allow us to create strings with embedded expressions, making it easier to concatenate strings and variables together.
+// In JavaScript, a higher - order function is a function that takes one or more functions as arguments, and / or returns a function as its result.In other words, a higher - order function is a function that operates on other functions, either by taking them as inputs or by returning them as outputs.
 
-//     Here's an example of how to use template literals:
-
-
-// const name = "John";
-// const age = 30;
-
-// const message = `My name is ${name} and I am ${age} years old.`;
-
-// console.log(message); // "My name is John and I am 30 years old."
-
-// In this example, we create two variables, name and age, and then use them to create a string using a template literal.We surround the string with backticks() instead of single or double quotes, which allows us to embed expressions inside the string using the ${ } syntax.
-
-// The expressions inside ${ } are evaluated and their results are concatenated into the final string.In this case, name and age are concatenated into the string message.
-
-// Template literals also support multi - line strings, which can be created by simply adding line breaks inside the backticks:
+//     Here's an example of a higher-order function:
 
 
-// const multiLineMessage = `
-//   My name is ${name}
-//   and I am ${age} years old.
-//   This is a multi-line string.
-// `;
+// function higherOrderFunction(callbackFunction) {
+//     console.log("Inside higher-order function");
+//     callbackFunction();
+// }
 
-// console.log(multiLineMessage);
+// function callback() {
+//     console.log("Inside callback function");
+// }
 
-// In this example, we create a multi - line string by adding line breaks inside the backticks.The result is a string with three lines, including the interpolated expressions for name and age.
+// higherOrderFunction(callback);
 
-// Template literals can make our code more readable and easier to maintain, especially when we need to concatenate strings and variables together.They also support advanced features such as tagged templates, which allow us to process template literals with custom functions.
+// In this example, we define a higher - order function called higherOrderFunction that takes a function as an argument, and then logs a message to the console.The function also calls the callback function that was passed in as an argument.
+
+// We also define a callback function called callback that logs a message to the console.
+
+//Finally, we call the higherOrderFunction function and pass in the callback function as an argument.This results in the message "Inside higher-order function" being logged to the console, followed by the message "Inside callback function".
+
+//Higher - order functions are often used for functional programming in JavaScript, where functions are treated as first - class citizens and can be passed around like any other data type.Higher - order functions can be used to create more flexible and reusable code, and can be used for a variety of purposes, such as:
+
+// Implementing callbacks and event handlers
+// Performing transformations on data using functions like map, reduce, and filter
+// Creating closures and private variables
+// Implementing currying and partial application of functions
+// Some examples of higher - order functions in JavaScript include Array.prototype.map, Array.prototype.filter, and setTimeout.
