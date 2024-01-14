@@ -1,42 +1,14 @@
-// In JavaScript, continue and break are two control flow statements that are used to alter the execution of loops.
+// Debugging a loop using VSCode and Node.js environment involves using the built -in debugging tools in VSCode to step through the loop and inspect the values of variables at each iteration.
 
-// continue is used inside a loop to skip the current iteration and move on to the next one.When continue is executed, the remaining code in the current iteration is skipped, and the loop moves on to the next iteration.For example:
+// Here are the steps to debug a loop in VSCode:
 
-
-// for (let i = 0; i < 5; i++) {
-//     if (i === 3) {
-//         continue;
-//     }
-//     console.log(i);
-// }
-
-
-// In this example, the continue statement is executed when i is equal to 3, so the code in the current iteration(which is to log the value of i) is skipped, and the loop moves on to the next iteration.The output of this code would be:
-
-
-// 0
-// 1
-// 2
-// 4
-
-// break is used inside a loop to immediately exit the loop when a certain condition is met.When break is executed, the loop is terminated, and the program continues with the code that comes after the loop.For example:
-
-
-// let i = 0;
-// while (i < 5) {
-//     console.log(i);
-//     i++;
-//     if (i === 3) {
-//         break;
-//     }
-// }
-
-// In this example, the break statement is executed when i is equal to 3, so the loop is terminated and the program moves on to the code that comes after the loop.The output of this code would be:
-
-
-// 0
-// 1
-// 2
-
-
-// Both continue and break can be used with any type of loop in JavaScript, including for, while, and do -while loops.They are useful for controlling the flow of a loop and can help simplify complex logic.
+// Open the JavaScript file containing the loop in VSCode.
+// Set a breakpoint at the start of the loop by clicking on the left margin of the editor window, next to the line number where the loop starts.Alternatively, you can place the cursor on the line where you want to set the breakpoint and press F9.
+// Open the VSCode debugger by clicking on the Debug icon in the left - hand menu or pressing Ctrl + Shift + D.
+// Select the "Node.js" environment from the drop - down menu in the top menu bar of the debugger.
+// Start the debugger by clicking on the green "Start Debugging" button or pressing F5.
+// The program will start running and will stop at the breakpoint you set in step 2. You can now use the debugging tools in VSCode to step through the loop, inspect variable values, and make changes to the code if needed.
+// To step through the loop, use the Step Over button(F10) to execute the current line of code and move to the next one, or the Step Into button(F11) to move into a function call.
+// To inspect the values of variables at each iteration, use the Debug Console or the Variables panel in the VSCode debugger. You can view the value of a variable by hovering over it with the mouse or by clicking on it in the Variables panel.
+// To continue running the program after the loop has finished, use the Continue button(F5) or the Run button(Ctrl + F5).
+// Debugging a loop in VSCode can help you identify and fix bugs in your code more quickly and efficiently by allowing you to step through the loop and see what's happening at each iteration.
