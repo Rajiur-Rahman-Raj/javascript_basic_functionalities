@@ -1,31 +1,41 @@
-// Strict mode is a feature in JavaScript that enables a stricter parser and runtime behavior for your code.When you enable strict mode in your script, you tell the JavaScript engine to enforce a set of rules that help you write better and more secure code.
+// IIFE stands for Immediately Invoked Function Expression.It is a function that is defined and immediately called, creating a self - contained scope that can be used to avoid polluting the global scope with variables and functions.
 
-// To enable strict mode, you simply include the string "use strict"; at the beginning of your script or a function.
+//     Here's an example of an IIFE:
 
-// Here are some of the behaviors that are affected by strict mode:
 
-// with statements are not allowed
-// eval function has its own scope and cannot modify the outer scope
-// You cannot use undeclared variables
-// Function parameters must have unique names
-// Assignments to non - writable properties or non - existing properties will throw errors
-// Duplicate object property names are not allowed
-// The delete operator cannot be used on non - configurable properties
-// The this keyword is undefined in functions that are not called as methods
-// Using strict mode can help you catch errors and write more robust code, as it makes the behavior of your code more predictable and less error - prone.However, it can also break code that relies on non - standard behavior, so you should use it with caution and test your code thoroughly after enabling it.
+//     (function () {
+//         var x = 10;
+//         console.log(x);
+//     })();
+// In this example, we define an anonymous function using the syntax(function () { /* function code here */ }).We then immediately call this function by adding() at the end, creating an IIFE.
 
-// Here's an example of how to enable strict mode in your script:
+// Inside the IIFE, we define a variable x with a value of 10 and log it to the console.Because the variable x is defined inside the IIFE, it is not accessible outside of it, preventing it from polluting the global scope.
 
-// javascript
-// Copy code
-// "use strict";
+// IIFEs are commonly used in JavaScript to create self - contained modules, where you can define private variables and functions that are not accessible from outside the module.Here's an example of how you can create a simple module using an IIFE:
 
-// function foo() {
-//     x = 10; // Throws an error because x is undeclared in strict mode
-//     console.log(this); // Outputs undefined because 'this' is undefined in strict mode
-// }
 
-// foo();
-// In this example, we include "use strict"; at the beginning of the script, and define a function foo. Inside the function, we try to assign a value to an undeclared variable, which throws an error in strict mode.We also log the value of this, which is undefined in strict mode when called as a standalone function.
+// var myModule = (function () {
+//     var privateVar = 0;
 
-// Overall, strict mode is a powerful tool for writing better and more secure JavaScript code, and can help catch errors and enforce best practices.
+//     function privateFunction() {
+//         console.log('Private function called');
+//     }
+
+//     return {
+//         publicVar: 1,
+//         publicFunction: function () {
+//             console.log('Public function called');
+//         }
+//     };
+// })();
+
+// console.log(myModule.publicVar); // Outputs 1
+// myModule.publicFunction(); // Outputs "Public function called"
+// console.log(myModule.privateVar); // Outputs undefined (private variable)
+// myModule.privateFunction(); // Throws an error (private function)
+
+// In this example, we define an IIFE that creates a module with a private variable privateVar and a private function privateFunction, as well as a public variable publicVar and a public function publicFunction.
+
+// We then return an object that contains the public variables and functions, which can be accessed from outside the module.The private variables and functions, however, are not accessible from outside the module and are hidden inside the scope of the IIFE.
+
+//     Overall, IIFEs are a powerful tool in JavaScript that can help you create self - contained scopes and avoid polluting the global scope with variables and functions.
