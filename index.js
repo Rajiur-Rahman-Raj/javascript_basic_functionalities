@@ -1,41 +1,56 @@
-// In JavaScript, there are two ways to define functions: function expressions and function declarations.
+// In JavaScript, there are three ways to declare variables: var, let, and const.Each of them has its own behavior and scope.
 
-// Function Declaration:
+//     var:
 
-// A function declaration is a way to define a function in JavaScript using the function keyword, followed by the function name, the parameter list, and the function body enclosed in curly braces.Here's an example:
+// var was the original way to declare variables in JavaScript.It has a function scope, which means that the variable is accessible within the function it's declared in, or the global scope if it's declared outside of any function.
 
 
-// function add(a, b) {
-//     return a + b;
+// function example() {
+//     var x = 5;
+//     console.log(x); // Output: 5
 // }
 
-// Function declarations are hoisted to the top of their scope, which means you can call the function before it's defined in the code:
+// console.log(x); // Output: ReferenceError: x is not defined
+// var variables can also be re-declared and reassigned:
 
 
-// console.log(add(2, 3)); // Output: 5
+// var x = 5;
+// var x = 10; // Re-declaring a variable with var is allowed
+// x = 15; // Reassigning a variable with var is allowed
+// let:
 
-// function add(a, b) {
-//     return a + b;
+// let was introduced in ES6 as a new way to declare variables in JavaScript.It has a block scope, which means that the variable is accessible within the block it's declared in, including inner blocks.
+
+
+// function example() {
+//     let x = 5;
+//     if (true) {
+//         let x = 10;
+//         console.log(x); // Output: 10
+//     }
+//     console.log(x); // Output: 5
 // }
-// Function Expression:
 
-// A function expression is a way to define a function as a value assigned to a variable.Here's an example:
-
-
-// const add = function (a, b) {
-//     return a + b;
-// };
-
-// Function expressions are not hoisted to the top of their scope, which means you must define the function before you can call it:
+// console.log(x); // Output: ReferenceError: x is not defined
+// let variables can be reassigned but cannot be re-declared:
 
 
-// const result = add(2, 3); // Error: add is not defined
+// let x = 5;
+// let x = 10; // Error: Identifier 'x' has already been declared
+// x = 15; // Reassigning a variable with let is allowed
+// const:
 
-// const add = function (a, b) {
-//     return a + b;
-// };
+// const is another way to declare variables in JavaScript that was introduced in ES6.It also has a block scope like let, but once a const variable is declared, it cannot be reassigned or re-declared:
 
 
-// One advantage of function expressions is that they can be used to create anonymous functions, which can be useful in certain situations, such as event handlers or callback functions.
+// const x = 5;
+// x = 10; // Error: Assignment to constant variable
+// const x = 10; // Error: Identifier 'x' has already been declared
+// However, if a const variable is an object or an array, its properties or elements can be modified:
 
-// In summary, function declarations are hoisted and can be called before they are defined, while function expressions are not hoisted and must be defined before they are called.Both function declarations and function expressions have their own use cases and are important tools in JavaScript programming.
+
+// const person = { name: "John" };
+// person.name = "Jane"; // Modifying a property of a const object is allowed
+// console.log(person); // Output: { name: "Jane" }
+
+// In summary, var has a function scope, let and const have a block scope, let variables can be reassigned but not re-declared, const variables cannot be reassigned or re-declared, but their properties can be modified if they are objects or arrays.
