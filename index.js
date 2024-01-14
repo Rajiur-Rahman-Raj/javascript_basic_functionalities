@@ -1,52 +1,27 @@
-// Async / await is a syntax feature in JavaScript that allows you to write asynchronous code in a more synchronous style.It is built on top of promises, which are a way to handle asynchronous operations in JavaScript.
+// A closure is a feature in JavaScript that allows a function to access variables from an outer(enclosing) function, even after the outer function has returned.This means that the inner function "closes over" the variables of the outer function, creating a persistent reference to those variables.
 
-// Let's start with an example of a function that returns a promise:
-
-
-// function myPromiseFunction() {
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             resolve("Hello world!");
-//         }, 1000);
-//     });
-// }
-
-// In this example, we define a function myPromiseFunction that returns a promise.The promise resolves after a delay of one second with the value "Hello world!".
-
-// Now let's use async/await to handle the promise:
+// Here's an example to illustrate how closures work:
 
 
-// async function myAsyncFunction() {
-//     const result = await myPromiseFunction();
-//     console.log(result);
-// }
+// function outer() {
+//     const name = 'John';
 
-// In this example, we define an async function myAsyncFunction. Inside the function, we use the await keyword to wait for the promise returned by myPromiseFunction to resolve.Once the promise resolves, we assign the result to a variable result.Finally, we log the result to the console.
-
-// The await keyword can only be used inside an async function, so we define myAsyncFunction as an async function.
-
-// Here's an example of using try/catch with async/await:
-
-
-// async function myAsyncFunction() {
-//     try {
-//         const result = await myPromiseFunction();
-//         console.log(result);
-//     } catch (error) {
-//         console.error(error);
+//     function inner() {
+//         console.log(`Hello, ${name}!`);
 //     }
+
+//     return inner;
 // }
 
-// In this example, we use a try/catch block to handle any errors that may occur while waiting for the promise to resolve. If an error occurs, we log it to the console using console.error.
+// const greeting = outer();
+// greeting();
 
-// Async / await can also be used with multiple promises.Here's an example of using Promise.all with async/await:
+// In this example, we define two functions: outer and inner.outer declares a variable name and defines the inner function, which logs a message that uses the name variable.
 
+// The outer function returns the inner function, which is assigned to the greeting variable.Finally, we call the greeting function, which logs "Hello, John!" to the console.
 
-// async function myAsyncFunction() {
-//     const results = await Promise.all([myPromiseFunction1(), myPromiseFunction2(), myPromiseFunction3()]);
-//     console.log(results);
-// }
+// Even though the outer function has returned and its variables should be out of scope, the inner function is still able to access the name variable.This is because the inner function has a closure over the name variable, creating a persistent reference to it.
 
-// In this example, we use Promise.all to wait for all three promises to resolve before continuing.The results of all three promises are returned as an array, which we assign to a variable results.Finally, we log the results to the console.
+// Closures can be very powerful and useful in JavaScript, allowing you to create functions that have private variables and state that can be accessed and modified only by the function itself. They can also be used to create higher - order functions, which are functions that take other functions as arguments and / or return functions as their result.
 
-// Overall, async / await is a powerful feature in JavaScript that makes writing asynchronous code easier and more readable.
+//     Overall, understanding closures is an important concept in JavaScript and can help you write more expressive and powerful code.
