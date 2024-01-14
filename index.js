@@ -1,51 +1,55 @@
-// JavaScript provides a variety of built -in methods for working with dates.Here are some of the most commonly used date methods in JavaScript:
+// JavaScript provides a variety of built -in math methods that you can use to perform mathematical operations on numbers.Here are some of the most commonly used math methods in JavaScript:
 
-// new Date() : Creates a new Date object representing the current date and time.
+// Math.abs(x) : Returns the absolute value of a number.
 
-//Date.parse(dateString) : Parses a string representing a date and time, and returns the number of milliseconds since January 1, 1970, 00: 00: 00 UTC.
+//Math.ceil(x) : Returns the smallest integer greater than or equal to a number.
 
-//dateObj.getFullYear() : Returns the year(4 digits) of a Date object.
+//Math.floor(x) : Returns the largest integer less than or equal to a number.
 
-//dateObj.getMonth() : Returns the month(0 - 11) of a Date object.
+//Math.round(x) : Returns the value of a number rounded to the nearest integer.
 
-//dateObj.getDate() : Returns the day of the month(1 - 31) of a Date object.
+//Math.max(x1, x2, ..., xn) : Returns the largest of zero or more numbers.
 
-//dateObj.getDay() : Returns the day of the week(0 - 6) of a Date object, where Sunday is 0 and Saturday is 6.
+//Math.min(x1, x2, ..., xn) : Returns the smallest of zero or more numbers.
 
-//dateObj.getHours() : Returns the hour(0 - 23) of a Date object.
+//Math.random() : Returns a random number between 0 and 1.
 
-//dateObj.getMinutes() : Returns the minute(0 - 59) of a Date object.
+// Math.pow(x, y) : Returns the value of x to the power of y.
 
-//dateObj.getSeconds() : Returns the second(0 - 59) of a Date object.
+//Math.sqrt(x) : Returns the square root of a number.
 
-//dateObj.getMilliseconds() : Returns the millisecond(0 - 999) of a Date object.
+//Math.exp(x) : Returns the value of e to the power of x.
 
-//dateObj.getTime() : Returns the number of milliseconds since January 1, 1970, 00: 00: 00 UTC.
+//Math.log(x) : Returns the natural logarithm(base e) of a number.
 
-//dateObj.setTime(milliseconds) : Sets the Date object to the specified number of milliseconds since January 1, 1970, 00: 00: 00 UTC.
+//Math.sin(x) : Returns the sine of a number.
 
-//dateObj.toDateString() : Returns the date portion of a Date object as a human - readable string.
+//Math.cos(x) : Returns the cosine of a number.
 
-//dateObj.toTimeString() : Returns the time portion of a Date object as a human - readable string.
+//Math.tan(x) : Returns the tangent of a number.
 
-//dateObj.toLocaleDateString() : Returns the date portion of a Date object as a localized string.
+//Math.PI : Represents the ratio of the circumference of a circle to its diameter, approximately equal to 3.14159.
 
-//dateObj.toLocaleTimeString() : Returns the time portion of a Date object as a localized string.
-
-// Here is an example of how to use some of these date methods in JavaScript:
+// Here is an example of how to use some of these math methods in JavaScript:
 
 
-// let today = new Date();
-// console.log(today.getFullYear()); // 2023
-// console.log(today.getMonth()); // 2 (March - 0 based)
-// console.log(today.getDate()); // 27
-// console.log(today.getDay()); // 0 (Sunday)
-// console.log(today.getHours()); // 12
-// console.log(today.getMinutes()); // 30
-// console.log(today.getSeconds()); // 0
-// console.log(today.getTime()); // 1648433400000
-// console.log(today.toDateString()); // Sun Mar 27 2023
-// console.log(today.toTimeString()); // 12:30:00 GMT-0700 (Pacific Daylight Time)
-// console.log(today.toLocaleDateString()); // 3/27/2023
-// console.log(today.toLocaleTimeString()); // 12:30:00 PM
-// By using these date methods, you can easily manipulate and work with dates in JavaScript.
+// let x = -5.5;
+// let y = 10;
+
+// console.log(Math.abs(x)); // 5.5
+// console.log(Math.ceil(x)); // -5
+// console.log(Math.floor(x)); // -6
+// console.log(Math.round(x)); // -6
+// console.log(Math.max(x, y)); // 10
+// console.log(Math.min(x, y)); // -5.5
+// console.log(Math.random()); // a random number between 0 and 1
+// console.log(Math.pow(y, 2)); // 100
+// console.log(Math.sqrt(y)); // 3.1622776601683795
+// console.log(Math.exp(y)); // 22026.465794806718
+// console.log(Math.log(y)); // 2.302585092994046
+// console.log(Math.sin(y)); // -0.5440211108893698
+// console.log(Math.cos(y)); // -0.8390715290764524
+// console.log(Math.tan(y)); // 0.6483608274590866
+// console.log(Math.PI); // 3.141592653589793
+
+// By using these math methods, you can easily perform mathematical operations on numbers in JavaScript.
