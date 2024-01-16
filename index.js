@@ -1,41 +1,46 @@
-// IIFE stands for Immediately Invoked Function Expression.It is a function that is defined and immediately called, creating a self - contained scope that can be used to avoid polluting the global scope with variables and functions.
+// Error handling is an important aspect of writing robust and reliable JavaScript code.It involves detecting and handling errors that may occur during the execution of your code.
 
-//     Here's an example of an IIFE:
-
-
-//     (function () {
-//         var x = 10;
-//         console.log(x);
-//     })();
-// In this example, we define an anonymous function using the syntax(function () { /* function code here */ }).We then immediately call this function by adding() at the end, creating an IIFE.
-
-// Inside the IIFE, we define a variable x with a value of 10 and log it to the console.Because the variable x is defined inside the IIFE, it is not accessible outside of it, preventing it from polluting the global scope.
-
-// IIFEs are commonly used in JavaScript to create self - contained modules, where you can define private variables and functions that are not accessible from outside the module.Here's an example of how you can create a simple module using an IIFE:
+// JavaScript provides a try-catch block for error handling.Here's an example of how it works:
 
 
-// var myModule = (function () {
-//     var privateVar = 0;
-
-//     function privateFunction() {
-//         console.log('Private function called');
+// try {
+     // Code that might throw an error
+// } catch (error) {
+    // Code to handle the error
 //     }
 
-//     return {
-//         publicVar: 1,
-//         publicFunction: function () {
-//             console.log('Public function called');
+// In this example, we wrap the code that might throw an error inside a try block.If an error occurs during the execution of this code, control is transferred to the catch block.The error parameter in the catch block contains information about the error that occurred.
+
+// Here's an example of how you can use try-catch for error handling:
+
+
+// function divide(a, b) {
+//     try {
+//         if (b === 0) {
+//             throw new Error('Cannot divide by zero');
 //         }
-//     };
-// })();
+//         return a / b;
+//     } catch (error) {
+//         console.log('Error:', error.message);
+//     }
+// }
 
-// console.log(myModule.publicVar); // Outputs 1
-// myModule.publicFunction(); // Outputs "Public function called"
-// console.log(myModule.privateVar); // Outputs undefined (private variable)
-// myModule.privateFunction(); // Throws an error (private function)
+// console.log(divide(10, 0)); // Outputs "Error: Cannot divide by zero"
+// console.log(divide(10, 2)); // Outputs 5
 
-// In this example, we define an IIFE that creates a module with a private variable privateVar and a private function privateFunction, as well as a public variable publicVar and a public function publicFunction.
+// In this example, we define a function divide that takes two arguments a and b.We wrap the code that might throw an error(dividing by zero) inside a try block.If an error occurs, we throw a new Error object with a message.
 
-// We then return an object that contains the public variables and functions, which can be accessed from outside the module.The private variables and functions, however, are not accessible from outside the module and are hidden inside the scope of the IIFE.
+// In the catch block, we log the error message to the console.If no error occurs, we return the result of the division.
 
-//     Overall, IIFEs are a powerful tool in JavaScript that can help you create self - contained scopes and avoid polluting the global scope with variables and functions.
+// JavaScript also provides a finally block that is executed after the try and catch blocks, regardless of whether an error occurred or not.Here's an example of how it works:
+
+
+// try {
+     // Code that might throw an error
+// } catch (error) {
+    // Code to handle the error
+// } finally {
+     // Code to be executed regardless of whether an error occurred or not
+// }
+
+// In summary, error handling is an important part of writing robust and reliable JavaScript code.The try-catch block is a powerful tool for detecting and handling errors that may occur during the execution of your code.
