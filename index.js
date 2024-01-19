@@ -1,176 +1,111 @@
-// 👉Short - circuiting and logical operators in JavaScript.
+// 👉Ternaries instead of if/else statements in JavaScript. 
 
-// These concepts are fundamental to understanding how to control the flow of your code based on certain conditions.Let's dive into each concept one by one.
+// Ternaries are a concise way of writing conditional statements, making your code more readable and compact. Let's dive into the details and explore some code examples.
 
-//✅ 1. Short - Circuiting:
-// In JavaScript, short - circuiting refers to the behavior of logical operators && and || when evaluating expressions.When these operators are used in an expression with multiple conditions, JavaScript stops evaluating the expression as soon as the final outcome can be determined.
-
-//   ✅  The && operator:
-
-// The && operator returns the first falsy value or the last truthy value encountered, depending on the evaluation.
-// If the left operand is falsy(e.g., false, 0, null, undefined, NaN), it is returned.Otherwise, the right operand is returned.
-//     Here's an example:
-
-// const result = false && true;
-// console.log(result);  // Output: false
-
-// In this case, since the left operand(false) is falsy, JavaScript stops evaluating and returns false.
-
-//    ✅ The || operator:
-
-// The || operator returns the first truthy value or the last falsy value encountered, depending on the evaluation.
-// If the left operand is truthy, it is returned.Otherwise, the right operand is returned.
-//     Here's an example:
-
-// const result = true || false;
-// console.log(result);  // Output: true
-
-// In this case, since the left operand(true) is truthy, JavaScript stops evaluating and returns true.
-
-// 2. ✅Logical Operators: &&, ||, ??
-//     In addition to short - circuiting, JavaScript provides logical operators that are commonly used for conditional expressions.
-
-//      ✅   The && operator:
-
-//     The && operator returns true if both the left and right operands are truthy; otherwise, it returns false.
-//         Here's an example:
-
-// const result = true && false;
-// console.log(result);  // Output: false
-
-// In this case, since one of the operands(false) is falsy, the expression evaluates to false.
+// In JavaScript, an if/else statement allows you to perform different actions based on a condition. For example:
 
 
-// ✅    The || operator:
-
-// The || operator returns true if either the left or right operand(or both) are truthy; it returns false if both operands are falsy.
-//     Here's an example:
-
-// const result = true || false;
-// console.log(result);  // Output: true
-
-// In this case, since one of the operands(true) is truthy, the expression evaluates to true.
-
-
-//    ✅ The ?? operator(Nullish Coalescing Operator):
-
-// The ?? operator returns the right operand if the left operand is null or undefined; otherwise, it returns the left operand.
-// This operator is useful for providing a default value when dealing with potentially null or undefined values.
-//     Here's an example:
-
-// const name = null;
-// const defaultName = name ?? 'John Doe';
-// console.log(defaultName);  // Output: John Doe
-
-// In this case, since name is null, the right operand('John Doe') is returned as the default value.
-// These are the main concepts related to short - circuiting and logical operators in JavaScript.Understanding them is crucial for writing concise and efficient code.Feel free to ask if you have any questions or need further clarification!
-
-
-// ✅Example 1: Using short - circuiting to handle default values:
-
-
-// function greetUser(name) {
-//     name = name || 'Guest';
-//     console.log('Hello, ' + name + '!');
+// if (condition) {
+   // code to execute if the condition is true
+// } else {
+   // code to execute if the condition is false
 // }
 
-// greetUser();  // Output: Hello, Guest!
-// greetUser('John');  // Output: Hello, John!
+// Instead of using if/else statements, you can leverage the ternary operator ? to achieve the same result in a more compact way. Here's the syntax of a ternary operator:
 
-// In this example, if the name parameter is falsy(e.g., undefined, null, or an empty string), the short - circuiting behavior of the || operator assigns the default value 'Guest' to the name variable.
+// condition ? expression1 : expression2
 
-// ✅Logical Operators: &&, ||, ??
+// If the condition evaluates to true, expression1 is executed; otherwise, expression2 is executed. It's important to note that ternaries are expressions, meaning they return a value that can be assigned to a variable or used directly within another expression.
 
-//     Example 2: Using logical operators for conditional statements:
+// Let's see some code examples to illustrate the usage of ternaries:
 
-
-// function checkAge(age) {
-//     if (age >= 18 && age <= 65) {
-//         console.log('You are eligible.');
-//     } else {
-//         console.log('You are not eligible.');
-//     }
-// }
-
-// checkAge(25);  // Output: You are eligible.
-// checkAge(10);  // Output: You are not eligible.
-
-// In this example, the && operator is used to check if the age falls within the range of 18 to 65. If both conditions are true, the user is considered eligible.
-
-//  ✅   Example 3: Using the Nullish Coalescing Operator to handle nullable values:
+// ✅Example 1: Checking if a number is even or odd
 
 
-// function getUserRole(user) {
-//     const role = user.role ?? 'Guest';
-//     console.log('User role: ' + role);
-// }
+// const number = 7;
+// const result = number % 2 === 0 ? "even" : "odd";
+// console.log(result); // Output: odd
 
-// const user1 = { role: 'Admin' };
-// const user2 = { role: null };
-// const user3 = {};  // role property is undefined
+// In this example, the ternary operator checks if the number is even by evaluating the condition number % 2 === 0. If the condition is true, the result will be "even"; otherwise, it will be "odd".
 
-// getUserRole(user1);  // Output: User role: Admin
-// getUserRole(user2);  // Output: User role: Guest
-// getUserRole(user3);  // Output: User role: Guest
-
-// In this example, the Nullish Coalescing Operator(??) is used to provide a default value of 'Guest' when the role property of the user object is null or undefined.
+// ✅Example 2: Determining the maximum value between two numbers
 
 
+// const num1 = 10;
+// const num2 = 15;
+// const max = num1 > num2 ? num1 : num2;
+// console.log(max); // Output: 15
 
-// ✅Example 4: Using short - circuiting to prevent errors when accessing nested properties:
+// Here, the ternary operator compares num1 and num2 using the condition num1 > num2. If the condition is true, num1 is assigned to max; otherwise, num2 is assigned.
 
-
-// const user = {
-//     id: 1,
-//     name: 'John',
-//     address: {
-//         street: '123 Main St',
-//         city: 'New York',
-//     },
-// };
-
- // Accessing nested property using short-circuiting
-// const city = user.address && user.address.city;
-// console.log(city);  // Output: New York
-
-// In this example, the short - circuiting behavior of the && operator is used to prevent errors if the address property or city property is not defined.It safely assigns the value of user.address.city to the city variable only if both user.address and user.address.city exist.
-
-    //✅ Example 5: Using short - circuiting for function fallback:
+// ✅Example 3: Converting a boolean value to a string
 
 
-// function greet(name) {
-//         name = name || getDefaultName();
-//         console.log('Hello, ' + name + '!');
-//     }
+// const isActive = true;
+// const status = isActive ? "active" : "inactive";
+// console.log(status); // Output: active
 
-// function getDefaultName() {
-//     console.log('Fetching default name...');
-//     return 'Guest';
-// }
+// In this example, the ternary operator checks if isActive is true. If true, the result will be "active"; otherwise, it will be "inactive".
 
-// greet();  // Output: Fetching default name... Hello, Guest!
-// greet('John');  // Output: Hello, John!
+// Ternaries can be nested, allowing for more complex conditions and multiple possible outcomes. However, it's essential to maintain code readability and not overuse nested ternaries, as it can lead to confusion.
 
-// In this example, if the name argument is falsy, the short - circuiting behavior of the || operator calls the getDefaultName() function to fetch the default name.This can be useful when providing fallback values or performing additional computations.
-
-//✅ Logical Operators: &&, ||, ??
-
-//   ✅  Example 6: Using logical operators for conditional assignment:
-
-// const age = 21;
-// const canDrink = age >= 18 && age <= 65;
-// console.log(canDrink);  // Output: true
-
-// In this example, the && operator is used to check if age is between 18 and 65(inclusive).The result of the expression is assigned to the canDrink variable, which evaluates to true since the condition is satisfied.
-
-//    ✅ Example 7: Using the Nullish Coalescing Operator to handle default values:
+// That's it! Ternaries provide a concise way of writing conditional statements in JavaScript. They can make your code more elegant and easier to understand. Practice using ternaries in different scenarios to become comfortable with this powerful coding technique. If you have any further questions, feel free to ask!
 
 
-// const username = getUserInput() ?? 'Anonymous';
-// console.log('Username:', username);
 
-// function getUserInput() {
-     // Simulating user input
-//     return null;
-// }
-// In this example, the Nullish Coalescing Operator(??) is used to assign the value of getUserInput() to the username variable.If the user input is null or undefined, the default value 'Anonymous' is used instead.
+// ✅Example 4: Checking the temperature range
+
+
+// const temperature = 25;
+// const weather = temperature > 30 ? "Hot" : temperature > 20 ? "Warm" : "Cool";
+// console.log(weather); // Output: Warm
+
+// In this example, the nested ternaries are used to determine the weather based on the temperature. If the temperature is greater than 30, the result is "Hot". If the temperature is not greater than 30 but is greater than 20, the result is "Warm". Otherwise, the result is "Cool".
+
+// ✅Example 5: Determining a student's grade
+
+
+// const marks = 85;
+// const grade = marks >= 90 ? "A" : marks >= 80 ? "B" : marks >= 70 ? "C" : "D";
+// console.log(grade); // Output: B
+
+// In this example, the nested ternaries are used to determine the grade based on the marks obtained by a student. If the marks are greater than or equal to 90, the result is "A". If the marks are not greater than or equal to 90 but are greater than or equal to 80, the result is "B". If the marks are not in the previous ranges but are greater than or equal to 70, the result is "C". Otherwise, the result is "D".
+
+// ✅Example 6: Checking user roles
+
+
+// const isAdmin = true;
+// const isModerator = false;
+// const accessLevel = isAdmin ? "Admin" : isModerator ? "Moderator" : "User";
+// console.log(accessLevel); // Output: Admin
+
+// In this example, the nested ternaries are used to determine the accessLevel based on the user's role. If the user is an isAdmin, the result is "Admin". If the user is not an isAdmin but is a isModerator, the result is "Moderator". Otherwise, the result is "User".
+
+
+
+// ✅Example 7: Checking the time of day
+
+
+// const hour = 17;
+// const timeOfDay = hour < 12 ? "Morning" : hour < 18 ? "Afternoon" : "Evening";
+// console.log(timeOfDay); // Output: Afternoon
+
+// In this example, the nested ternaries are used to determine the timeOfDay based on the hour value. If the hour is less than 12, the result is "Morning". If the hour is not less than 12 but is less than 18, the result is "Afternoon". Otherwise, the result is "Evening".
+
+// ✅Example 8: Checking if a number is positive, negative, or zero
+
+
+// const number = 0;
+// const sign = number > 0 ? "Positive" : number < 0 ? "Negative" : "Zero";
+// console.log(sign); // Output: Zero
+
+// In this example, the nested ternaries are used to determine the sign based on the number. If the number is greater than 0, the result is "Positive". If the number is not greater than 0 but is less than 0, the result is "Negative". Otherwise, the result is "Zero".
+
+// ✅Example 9: Checking if a string is uppercase, lowercase, or mixed case
+
+
+// const str = "HelloWorld";
+// const caseType = str === str.toUpperCase() ? "Uppercase" : str === str.toLowerCase() ? "Lowercase" : "Mixed case";
+// console.log(caseType); // Output: Mixed case
+
+// In this example, the nested ternaries are used to determine the caseType based on the str value. If the str is equal to its uppercase version, the result is "Uppercase". If the str is not equal to its uppercase version but is equal to its lowercase version, the result is "Lowercase". Otherwise, the result is "Mixed case".
