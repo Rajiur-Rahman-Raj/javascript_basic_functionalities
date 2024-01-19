@@ -1,111 +1,238 @@
-// 👉Ternaries instead of if/else statements in JavaScript. 
+//  👉Optional Chaining in JavaScript
 
-// Ternaries are a concise way of writing conditional statements, making your code more readable and compact. Let's dive into the details and explore some code examples.
+// Optional Chaining is a feature introduced in ECMAScript 2020(ES2020) that allows you to safely access properties and methods of an object without worrying about the existence of intermediate properties or the object itself.It helps prevent errors when accessing nested properties on an object that may be null or undefined.
 
-// In JavaScript, an if/else statement allows you to perform different actions based on a condition. For example:
+// The syntax for Optional Chaining is the question mark(?) followed by a dot(.) operator.It can be placed between any two property accesses in a chain.Here's an example to illustrate its usage:
 
 
-// if (condition) {
-   // code to execute if the condition is true
-// } else {
-   // code to execute if the condition is false
+// const person = {
+//     name: 'John',
+//     address: {
+//         street: '123 Main St',
+//         city: 'New York',
+//         zipCode: '10001'
+//     }
+// };
+
+ // Accessing properties without Optional Chaining
+// const city = person.address.city; // 'New York'
+// const country = person.address.country; // TypeError: Cannot read property 'country' of undefined
+
+ // Accessing properties with Optional Chaining
+// const city = person?.address?.city; // 'New York'
+// const country = person?.address?.country; // undefined
+
+
+// In the first set of code, we try to access the city property of the address object using the regular dot notation.It works as expected and returns 'New York'.However, when we try to access the non - existent country property, it throws a TypeError because the address object is defined, but country is not.
+
+// In the second set of code, we use Optional Chaining to access the properties.The question mark(?) after person checks if the person object is defined before proceeding.Similarly, the question mark after address checks if the address property exists on the person object.If any intermediate property is null or undefined, the result will be undefined instead of throwing an error.
+
+// Optional Chaining is particularly useful when dealing with nested objects and when you're unsure if all properties in the chain exist. It simplifies the code and reduces the need for explicit null or undefined checks.
+
+// ✅Additionally, you can also use Optional Chaining with function calls.Here's an example:
+
+
+// const calculator = {
+//     add: (a, b) => a + b,
+//     multiply: (a, b) => a * b
+// };
+
+// const result = calculator?.add?.(3, 5);
+// console.log(result); // 8
+
+// In this example, we use Optional Chaining to safely call the add function on the calculator object.If calculator or add is undefined, the code will gracefully handle it without throwing an error.
+
+//     That's the basic idea behind Optional Chaining in JavaScript. It provides a concise way to handle property access on nested objects, reducing the risk of errors when dealing with potentially missing or undefined values.
+
+
+
+// ✅Example 1: Accessing array elements
+
+
+// const data = {
+//     items: [
+//         { id: 1, name: 'Item 1' },
+//         { id: 2, name: 'Item 2' },
+//         { id: 3, name: 'Item 3' }
+//     ]
+// };
+
+ // Accessing array elements without Optional Chaining
+// const firstItem = data.items[0]; // { id: 1, name: 'Item 1' }
+// const fourthItem = data.items[3]; // undefined
+
+ // Accessing array elements with Optional Chaining
+// const firstItem = data.items?.[0]; // { id: 1, name: 'Item 1' }
+// const fourthItem = data.items?.[3]; // undefined
+
+// In this example, we have an object data that contains an array items.Without Optional Chaining, accessing an array element that doesn't exist results in undefined or an out-of-bounds error. With Optional Chaining, the ?. operator ensures that accessing non-existent array elements returns undefined instead of throwing an error.
+
+// ✅Example 2: Checking method existence
+
+
+// const obj = {
+//     greet: () => console.log('Hello, World!')
+// };
+
+ // Checking method existence without Optional Chaining
+// if (obj.greet) {
+//     obj.greet(); // 'Hello, World!'
 // }
 
-// Instead of using if/else statements, you can leverage the ternary operator ? to achieve the same result in a more compact way. Here's the syntax of a ternary operator:
+ // Checking method existence with Optional Chaining
+// obj.greet?.(); // 'Hello, World!'
 
-// condition ? expression1 : expression2
+// In this example, we have an object obj with a greet method.Without Optional Chaining, we need to manually check if the method exists before calling it to avoid errors.With Optional Chaining, the?.operator handles the check internally and safely calls the method if it exists.
 
-// If the condition evaluates to true, expression1 is executed; otherwise, expression2 is executed. It's important to note that ternaries are expressions, meaning they return a value that can be assigned to a variable or used directly within another expression.
-
-// Let's see some code examples to illustrate the usage of ternaries:
-
-// ✅Example 1: Checking if a number is even or odd
+//    ✅ Example 3: Chaining multiple optional properties
 
 
-// const number = 7;
-// const result = number % 2 === 0 ? "even" : "odd";
-// console.log(result); // Output: odd
+// const user = {
+//     name: 'John',
+//     address: {
+//         street: '123 Main St',
+//         city: 'New York',
+//         zipCode: '10001'
+//     },
+//     job: {
+//         title: 'Developer',
+//         company: 'ABC Corp'
+//     }
+// };
 
-// In this example, the ternary operator checks if the number is even by evaluating the condition number % 2 === 0. If the condition is true, the result will be "even"; otherwise, it will be "odd".
+// Accessing nested properties without Optional Chaining
+// const jobTitle = user.job && user.job.title; // 'Developer'
+// const companyName = user.job && user.job.company; // 'ABC Corp'
 
-// ✅Example 2: Determining the maximum value between two numbers
+ // Accessing nested properties with Optional Chaining
+// const jobTitle = user?.job?.title; // 'Developer'
+// const companyName = user?.job?.company; // 'ABC Corp'
 
-
-// const num1 = 10;
-// const num2 = 15;
-// const max = num1 > num2 ? num1 : num2;
-// console.log(max); // Output: 15
-
-// Here, the ternary operator compares num1 and num2 using the condition num1 > num2. If the condition is true, num1 is assigned to max; otherwise, num2 is assigned.
-
-// ✅Example 3: Converting a boolean value to a string
-
-
-// const isActive = true;
-// const status = isActive ? "active" : "inactive";
-// console.log(status); // Output: active
-
-// In this example, the ternary operator checks if isActive is true. If true, the result will be "active"; otherwise, it will be "inactive".
-
-// Ternaries can be nested, allowing for more complex conditions and multiple possible outcomes. However, it's essential to maintain code readability and not overuse nested ternaries, as it can lead to confusion.
-
-// That's it! Ternaries provide a concise way of writing conditional statements in JavaScript. They can make your code more elegant and easier to understand. Practice using ternaries in different scenarios to become comfortable with this powerful coding technique. If you have any further questions, feel free to ask!
+// In this example, we have an object user that contains nested properties.Without Optional Chaining, accessing nested properties requires multiple checks to avoid errors.With Optional Chaining, the?.operator handles the checks for us, resulting in cleaner and more concise code.
 
 
-
-// ✅Example 4: Checking the temperature range
-
-
-// const temperature = 25;
-// const weather = temperature > 30 ? "Hot" : temperature > 20 ? "Warm" : "Cool";
-// console.log(weather); // Output: Warm
-
-// In this example, the nested ternaries are used to determine the weather based on the temperature. If the temperature is greater than 30, the result is "Hot". If the temperature is not greater than 30 but is greater than 20, the result is "Warm". Otherwise, the result is "Cool".
-
-// ✅Example 5: Determining a student's grade
+// ✅Example 1: Accessing properties of an array of objects
 
 
-// const marks = 85;
-// const grade = marks >= 90 ? "A" : marks >= 80 ? "B" : marks >= 70 ? "C" : "D";
-// console.log(grade); // Output: B
+// const users = [
+//     { id: 1, name: 'John', email: 'john@example.com' },
+//     { id: 2, name: 'Jane', email: 'jane@example.com' },
+//     { id: 3, name: 'Alex' }
+// ];
 
-// In this example, the nested ternaries are used to determine the grade based on the marks obtained by a student. If the marks are greater than or equal to 90, the result is "A". If the marks are not greater than or equal to 90 but are greater than or equal to 80, the result is "B". If the marks are not in the previous ranges but are greater than or equal to 70, the result is "C". Otherwise, the result is "D".
+ // Accessing properties without Optional Chaining
+// const firstUserName = users[0].name; // 'John'
+// const secondUserEmail = users[1].email; // 'jane@example.com'
+// const thirdUserEmail = users[2].email; // TypeError: Cannot read property 'email' of undefined
 
-// ✅Example 6: Checking user roles
+ // Accessing properties with Optional Chaining
+// const firstUserName = users?.[0]?.name; // 'John'
+// const secondUserEmail = users?.[1]?.email; // 'jane@example.com'
+// const thirdUserEmail = users?.[2]?.email; // undefined
 
+// In this example, we have an array of user objects.Without Optional Chaining, accessing properties of array elements can lead to errors if the property does not exist.With Optional Chaining, we can safely access the properties, and if any intermediate property or object is missing, it gracefully returns undefined.
 
-// const isAdmin = true;
-// const isModerator = false;
-// const accessLevel = isAdmin ? "Admin" : isModerator ? "Moderator" : "User";
-// console.log(accessLevel); // Output: Admin
-
-// In this example, the nested ternaries are used to determine the accessLevel based on the user's role. If the user is an isAdmin, the result is "Admin". If the user is not an isAdmin but is a isModerator, the result is "Moderator". Otherwise, the result is "User".
-
-
-
-// ✅Example 7: Checking the time of day
-
-
-// const hour = 17;
-// const timeOfDay = hour < 12 ? "Morning" : hour < 18 ? "Afternoon" : "Evening";
-// console.log(timeOfDay); // Output: Afternoon
-
-// In this example, the nested ternaries are used to determine the timeOfDay based on the hour value. If the hour is less than 12, the result is "Morning". If the hour is not less than 12 but is less than 18, the result is "Afternoon". Otherwise, the result is "Evening".
-
-// ✅Example 8: Checking if a number is positive, negative, or zero
+//    ✅ Example 2: Chaining methods and accessing nested properties
 
 
-// const number = 0;
-// const sign = number > 0 ? "Positive" : number < 0 ? "Negative" : "Zero";
-// console.log(sign); // Output: Zero
+// const user = {
+//     id: 1,
+//     name: 'John',
+//     getProfile: function () {
+//         return {
+//             email: 'john@example.com',
+//             address: {
+//                 city: 'New York',
+//                 zipCode: '10001'
+//             }
+//         };
+//     }
+// };
 
-// In this example, the nested ternaries are used to determine the sign based on the number. If the number is greater than 0, the result is "Positive". If the number is not greater than 0 but is less than 0, the result is "Negative". Otherwise, the result is "Zero".
+ // Accessing properties and calling methods without Optional Chaining
+// const userEmail = user.getProfile().email; // 'john@example.com'
+// const userCity = user.getProfile().address.city; // 'New York'
 
-// ✅Example 9: Checking if a string is uppercase, lowercase, or mixed case
+ // Accessing properties and calling methods with Optional Chaining
+// const userEmail = user.getProfile?.().email; // 'john@example.com'
+// const userCity = user.getProfile?.().address?.city; // 'New York'
+
+// In this example, we have an object user with a getProfile method that returns an object containing user details.Without Optional Chaining, accessing nested properties and calling methods can result in errors if any intermediate property or object is missing.With Optional Chaining, we can safely access the properties and call methods, and if any intermediate property or object is missing, it gracefully returns undefined.
+
+//   ✅  Example 3: Checking and calling optional callback functions
 
 
-// const str = "HelloWorld";
-// const caseType = str === str.toUpperCase() ? "Uppercase" : str === str.toLowerCase() ? "Lowercase" : "Mixed case";
-// console.log(caseType); // Output: Mixed case
+// const button = document.querySelector('#myButton');
 
-// In this example, the nested ternaries are used to determine the caseType based on the str value. If the str is equal to its uppercase version, the result is "Uppercase". If the str is not equal to its uppercase version but is equal to its lowercase version, the result is "Lowercase". Otherwise, the result is "Mixed case".
+ // Checking and calling a callback function without Optional Chaining
+// if (button && button.addEventListener) {
+//     button.addEventListener('click', handleClick);
+// }
+
+ // Checking and calling a callback function with Optional Chaining
+// button?.addEventListener?.('click', handleClick);
+
+// In this example, we have a button element selected from the DOM.Without Optional Chaining, we need to explicitly check if the button element and the addEventListener method exist before adding an event listener.With Optional Chaining, we can directly call the addEventListener method without worrying about null or undefined values, resulting in more concise code.
+
+
+
+// ✅Example 4: Optional Chaining with conditional logic
+
+
+// const user = {
+//     name: 'John',
+//     address: null
+// };
+
+ // Checking if address is available and displaying a message
+// if (user.address && user.address.city) {
+//     console.log(`User lives in ${user.address.city}`);
+// } else {
+//     console.log('User address is not available');
+// }
+
+ // Optional Chaining with conditional logic
+// console.log(`User lives in ${user.address?.city ?? 'unknown'}`);
+
+// In this example, we have an object user with a name property and an address property that may be null.Without Optional Chaining, we need to perform explicit checks for each property to avoid errors.With Optional Chaining and the nullish coalescing operator(??), we can simplify the code and provide a fallback value in case the property or object is null or undefined.
+
+//  ✅   Example 5: Optional Chaining with dynamic property access
+
+
+// const user = {
+//     name: 'John',
+//     getAddress: function () {
+//         return {
+//             city: 'New York',
+//             zipCode: '10001'
+//         };
+//     }
+// };
+
+// const property = 'zipCode';
+
+ // Accessing dynamic property without Optional Chaining
+// const dynamicValue = user.getAddress()[property]; // '10001'
+
+ // Accessing dynamic property with Optional Chaining
+// const dynamicValue = user.getAddress?.()?.[property]; // '10001'
+
+// In this example, we have an object user with a getAddress method that returns an address object.We also have a dynamic property stored in the property variable.Without Optional Chaining, accessing the dynamic property requires multiple checks.With Optional Chaining, we can handle the dynamic property access in a concise manner while also handling the possibility of null or undefined values.
+
+//  ✅   Example 6: Optional Chaining with function calls
+
+
+// const mathUtils = {
+//     add: (a, b) => a + b,
+//     multiply: (a, b) => a * b
+// };
+
+// const operation = 'add';
+
+ // Calling a dynamic function without Optional Chaining
+// const result = mathUtils[operation](2, 3); // 5
+
+ // Calling a dynamic function with Optional Chaining
+// const result = mathUtils?.[operation]?.(2, 3); // 5
+
+// In this example, we have an object mathUtils with dynamic functions add and multiply.We also have a dynamic function name stored in the operation variable.Without Optional Chaining, accessing and calling the dynamic function requires additional checks.With Optional Chaining, we can safely call the dynamic function and handle the possibility of null or undefined values.
