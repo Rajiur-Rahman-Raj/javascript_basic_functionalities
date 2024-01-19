@@ -1,27 +1,20 @@
-// Recursive functions are functions that call themselves.This can be useful when you need to solve a problem that can be broken down into smaller sub - problems, each of which can be solved in the same way as the original problem.Here's an example:
+// Currying is a technique where a function that takes multiple arguments is transformed into a series of functions that take one argument each.The result is a function that can be partially applied, meaning that some of its arguments can be fixed in advance, leaving a new function that takes only the remaining arguments.This can be useful when you need to reuse a function with the same arguments multiple times.
+
+//     Here's an example of a curried function in JavaScript:
 
 
-// function factorial(n) {
-//     if (n === 0) {
-//         return 1;
-//     } else {
-//         return n * factorial(n - 1);
-//     }
+// function add(x) {
+//     return function (y) {
+//         return x + y;
+//     };
 // }
-// This is a recursive function that calculates the factorial of a number.The factorial of a number n is the product of all the integers from 1 to n.For example, the factorial of 5 is 5 x 4 x 3 x 2 x 1, which is 120.
+// This function takes one argument, x, and returns a new function that takes one argument, y, and returns the sum of x and y.Here's how you can use this function:
 
-// Let's break down how this function works:
+// let add5 = add(5); // This creates a new function that adds 5 to its argument.
+// console.log(add5(3)); // Output: 8
+// console.log(add5(7)); // Output: 12
+// In this example, we first create a new function add5 by calling add with the argument 5. This returns a new function that takes one argument, y, and returns the sum of 5 and y.We can then call add5 with different values for y, and each call will return the sum of 5 and the value of y.
 
-// The function factorial takes one argument, n.
-// If n is 0, the function returns 1. This is the base case of the recursive function.
-// If n is not 0, the function returns n times the result of calling factorial with n - 1. This is the recursive case.
-// When factorial is called with a number, it first checks if the number is 0. If it is, the function returns 1. If it's not, the function returns n times the result of calling factorial with n - 1. This process continues until n is 0, at which point the function starts returning the products of the previous calls to factorial. This is because each call to factorial is waiting for the next call to return before it can finish.
+// The benefit of using currying is that we can create reusable functions that are tailored to a specific use case. In this example, we created a function that adds 5 to its argument, but we could easily create a function that adds any other number by passing a different argument to add.
 
-// Here's an example of how to call the factorial function:
-
-
-// let result = factorial(5);
-// console.log(result); // Output: 120
-// This will calculate the factorial of 5 using the recursive function we defined earlier.
-
-// One important thing to note is that recursive functions can be very memory - intensive if the recursion goes too deep.This is because each function call is added to the call stack, and if the call stack gets too large, it can cause a stack overflow error.It's important to keep this in mind when using recursive functions, and to consider using iterative solutions when possible.
+// Another benefit of currying is that it can make it easier to compose functions.By breaking down a function into smaller functions that take one argument each, we can combine them in different ways to create new functions that perform more complex tasks.
