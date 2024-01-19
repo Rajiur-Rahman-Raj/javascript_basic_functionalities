@@ -1,34 +1,27 @@
-// setTimeout is a function that allows you to delay the execution of a function for a specified amount of time(in milliseconds).It takes two arguments: a callback function to execute after the delay, and the delay time in milliseconds.Here's an example:
+// Recursive functions are functions that call themselves.This can be useful when you need to solve a problem that can be broken down into smaller sub - problems, each of which can be solved in the same way as the original problem.Here's an example:
 
 
-// setTimeout(() => {
-//     console.log('Delayed function');
-// }, 1000); // Execute the function after a delay of 1000 milliseconds (1 second)
-// setInterval is a function that allows you to repeatedly execute a function with a fixed time delay between each execution.It takes two arguments: a callback function to execute, and the delay time in milliseconds.Here's an example:
+// function factorial(n) {
+//     if (n === 0) {
+//         return 1;
+//     } else {
+//         return n * factorial(n - 1);
+//     }
+// }
+// This is a recursive function that calculates the factorial of a number.The factorial of a number n is the product of all the integers from 1 to n.For example, the factorial of 5 is 5 x 4 x 3 x 2 x 1, which is 120.
+
+// Let's break down how this function works:
+
+// The function factorial takes one argument, n.
+// If n is 0, the function returns 1. This is the base case of the recursive function.
+// If n is not 0, the function returns n times the result of calling factorial with n - 1. This is the recursive case.
+// When factorial is called with a number, it first checks if the number is 0. If it is, the function returns 1. If it's not, the function returns n times the result of calling factorial with n - 1. This process continues until n is 0, at which point the function starts returning the products of the previous calls to factorial. This is because each call to factorial is waiting for the next call to return before it can finish.
+
+// Here's an example of how to call the factorial function:
 
 
-// let count = 0;
-// const intervalId = setInterval(() => {
-//     console.log(count);
-//     count++;
-// }, 1000); // Execute the function every 1000 milliseconds (1 second)
+// let result = factorial(5);
+// console.log(result); // Output: 120
+// This will calculate the factorial of 5 using the recursive function we defined earlier.
 
-// To stop the interval, call clearInterval with the interval ID
-
-// setTimeout(() => {
-//     clearInterval(intervalId);
-// }, 5000); // Stop the interval after 5 seconds
-
-// clearInterval is a function that allows you to stop a running setInterval timer.It takes one argument: the interval ID returned by setInterval.Here's an example:
-
-
-// const intervalId = setInterval(() => {
-//     console.log('Repeating function');
-// }, 1000); // Execute the function every 1000 milliseconds (1 second)
-
-// // To stop the interval, call clearInterval with the interval ID
-// setTimeout(() => {
-//     clearInterval(intervalId);
-// }, 5000); // Stop the interval after 5 seconds
-
-// In summary, setTimeout allows you to delay the execution of a function, setInterval allows you to repeatedly execute a function with a fixed delay, and clearInterval allows you to stop a running interval timer.
+// One important thing to note is that recursive functions can be very memory - intensive if the recursion goes too deep.This is because each function call is added to the call stack, and if the call stack gets too large, it can cause a stack overflow error.It's important to keep this in mind when using recursive functions, and to consider using iterative solutions when possible.
