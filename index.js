@@ -1,320 +1,447 @@
-// 👉Grouping operator: ()
 
-// The grouping operator ( ) is used to override the default precedence and explicitly define the order of operations.
+// ✅Here is a list of different types of functions in JavaScript:
 
-// let result = (2 + 3) * 4;
-// console.log(result); // Output: 20
+// Named Functions
+// Anonymous Functions(Function Expressions)
+// Arrow Functions
+// Recursive Functions
+// Higher - Order Functions
+
+// ✅ Built In Functions List :
+
+// Here are some of the most commonly used built -in functions in JavaScript:
+
+    // alert() - Displays a dialog box with a message and an OK button.
+    // console.log() - Outputs a message to the web console.
+    // prompt() - Displays a dialog box with a message and a text input field.
+    // confirm() - Displays a dialog box with a message and OK / Cancel buttons.
+    // parseFloat() - Converts a string to a floating - point number.
+    // parseInt() - Converts a string to an integer.
+    // String() - Converts a value to a string.
+    // Number() - Converts a value to a number.
+    // Boolean() - Converts a value to a boolean.
+    // Array() - Creates a new array object.
+    // Object() - Creates a new object.
+    // Date() - Creates a new Date object representing a specific time.
+    // Math.random() - Generates a random number between 0 and 1.
+    // Math.floor() - Rounds a number down to the nearest integer.
+    // Math.ceil() - Rounds a number up to the nearest integer.
+    // Math.round() - Rounds a number to the nearest integer.
+    // Math.max() - Returns the largest number from a list of arguments.
+    // Math.min() - Returns the smallest number from a list of arguments.
+    // Math.abs() - Returns the absolute value of a number.
+    // Math.sqrt() - Calculates the square root of a number.
+    // typeof () - Returns the data type of a value.
+    // isNaN() - Checks if a value is NaN(Not - a - Number).
+    // isFinite() - Checks if a value is a finite number.
+    // length() - Returns the length of a string or the number of elements in an array.
+    // charAt() - Returns the character at a specified index in a string.
+    // substring() - Extracts a substring from a string, based on starting and ending indexes.
+    // toUpperCase() - Converts a string to uppercase.
+    // toLowerCase() - Converts a string to lowercase.
+    // concat() - Joins two or more strings.
+    // split() - Splits a string into an array of substrings based on a specified delimiter.
+    // join() - Joins all elements of an array into a string.
+    // push() - Adds one or more elements to the end of an array.
+    // pop() - Removes the last element from an array and returns that element.
+    // shift() - Removes the first element from an array and returns that element.
+    // unshift() - Adds one or more elements to the beginning of an array.
+    // indexOf() - Returns the first index at which a specified element is found in an array.
+    // includes() - Checks if an array contains a specified element and returns true or false.
+    // slice() - Extracts a section of an array and returns a new array.
+    // forEach() - Executes a provided function once for each array element.
+    // map() - Creates a new array with the results of calling a provided function on every element in the array.
+
+// reduce() - Applies a function to an accumulator and each element in an array(from left to right) to reduce it to a single value.
+// filter() - Creates a new array with all elements that pass a test implemented by a provided function.
+// find() - Returns the first element in an array that satisfies a provided testing function.
+// findIndex() - Returns the index of the first element in an array that satisfies a provided testing function.
+// sort() - Sorts the elements of an array in place and returns the sorted array.
+// reverse() - Reverses the order of the elements in an array.
+// toFixed() - Formats a number using fixed - point notation and returns a string representation.
+// toLocaleString() - Returns a string representation of a number using locale - specific formatting.
+// toPrecision() - Formats a number to a specified precision and returns a string representation.
+// decodeURI() - Decodes a Uniform Resource Identifier(URI) that has been encoded with encodeURI().
+// encodeURI() - Encodes a Uniform Resource Identifier(URI) by replacing each instance of certain characters with escape sequences.
+// decodeURIComponent() - Decodes a Uniform Resource Identifier(URI) component that has been encoded with encodeURIComponent().
+// encodeURIComponent() - Encodes a Uniform Resource Identifier(URI) component by replacing each instance of certain characters with escape sequences.
+// setTimeout() - Calls a function or evaluates an expression after a specified delay(in milliseconds).
+// setInterval() - Calls a function or evaluates an expression at specified intervals(in milliseconds) repeatedly.
+// clearTimeout() - Cancels a timeout previously scheduled with setTimeout().
+//  clearInterval() - Cancels an interval previously set with setInterval().
+//  JSON.parse() - Parses a JSON string and converts it into a JavaScript object.
+//  JSON.stringify() - Converts a JavaScript object into a JSON string.
+//  encodeURIComponent() - Encodes a Uniform Resource Identifier(URI) component by replacing each instance of certain characters with escape sequences.
+                                                                
 
 
 
-// 👉Member access operator: . []
 
-// The member access operator . and [] are used to access properties or methods of an object.
+// Functions are an essential part of JavaScript programming as they allow you to encapsulate reusable blocks of code.They are like mini - programs within your program that can perform specific tasks.Functions can be defined and called in different ways, and they can accept parameters and return values.
 
-// let person = {
-//   name: 'John',
-//   age: 30
-// };
-// console.log(person.name); // Output: John
-// console.log(person['age']); // Output: 30
+//     Here's an example of how to define and call a simple function in JavaScript:
 
-// 👉Computed member access operator: []
 
-// The computed member access operator [] is used to access object properties dynamically.
+// 👉Function definition
 
-// let prop = 'name';
-// let person = {
-//   name: 'John',
-//   age: 30
-// };
-// console.log(person[prop]); // Output: John
-
-// 👉Function call operator: ()
-
-// The function call operator () is used to invoke a function.
-
-// function sayHello(name) {
-//   console.log('Hello, ' + name + '!');
+// function greet() {
+//     console.log("Hello, world!");
 // }
-// sayHello('Alice'); // Output: Hello, Alice!
+
+// Function call
+// greet(); // Output: Hello, world!
+
+// In this example, we define a function called greet(), which logs the message "Hello, world!" to the console.To call the function, we simply write greet();. This will execute the code inside the function and produce the output.
+
+// Functions can also accept parameters, allowing you to pass values into the function for it to use.Here's an example:
 
 
-
-// 👉new operator
-
-// The new operator is used to create an instance of an object or to call a constructor function.
-
-// function Person(name) {
-//   this.name = name;
+// 👉Function definition with parameters
+// function addNumbers(a, b) {
+//     var sum = a + b;
+//     console.log("The sum is: " + sum);
 // }
-// let john = new Person('John');
-// console.log(john.name); // Output: John
+
+// Function call with arguments
+// addNumbers(5, 3); // Output: The sum is: 8
+
+// In this case, the addNumbers() function takes two parameters, a and b, and calculates their sum.When we call the function with addNumbers(5, 3);, the values 5 and 3 are passed as arguments, and the function calculates the sum and logs it to the console.
+
+// Functions can also return values using the return statement.Here's an example:
 
 
-// 👉Increment and decrement operators: ++ --
+// 👉Function definition with a return statement
 
-// The increment ++ and decrement -- operators are used to increase or decrease the value of a variable by one.
+// function multiply(a, b) {
+//     var product = a * b;
+//     return product;
+// }
 
-// let count = 5;
-// count++;
-// console.log(count); // Output: 6
+// Function call and storing the result
+// var result = multiply(4, 6);
+// console.log("The result is: " + result); // Output: The result is: 24
 
-// 👉Logical NOT operator: !
-
-// The logical NOT operator ! is used to negate a boolean value.
-
-// let isTrue = true;
-// let isFalse = !isTrue;
-// console.log(isFalse); // Output: false
-
-// 👉Multiplication and division operators: * / %
-
-// The multiplication *, division /, and modulus % operators perform arithmetic operations.
-
-// let product = 5 * 3;
-// console.log(product); // Output: 15
-
-// let quotient = 10 / 2;
-// console.log(quotient); // Output: 5
-
-// let remainder = 10 % 3;
-// console.log(remainder); // Output: 1
-
-
-
-// 👉Addition and subtraction operators: + -
-
-// The addition + and subtraction - operators perform arithmetic operations.
-
-// let sum = 2 + 3;
-// console.log(sum); // Output: 5
-
-// let difference = 7 - 4;
-// console.log(difference); // Output: 3
-
-
-// 👉Relational operators: < > <= >=
-
-// The relational operators <, >, <=, and >= compare the values of two operands.
-
-// console.log(5 < 10); // Output: true
-// console.log(8 >= 8); // Output: true
-
-
-
-// 👉Equality operators: == !=
-
-// The equality operators == and != compare the values of two operands for equality, performing type coercion if necessary.
-
-// console.log(5 == '5'); // Output: true
-// console.log(8 != '8'); // Output: false
-
-// 👉Strict equality operators: === !==
-
-// The strict equality operators === and !== compare the values of two operands without performing type coercion.
-
-// console.log(5 === '5'); // Output: false
-// console.log(8 !== '8'); // Output: true
-
-// 👉Logical AND operator: &&
-
-// The logical AND operator && returns true if both operands are true, and false otherwise.
-
-// console.log(true && false); // Output: false
-// console.log(5 > 3 && 2 < 4); // Output: true
-
-// 👉Logical OR operator: ||
-
-// The logical OR operator || returns true if either of the operands is true, and false otherwise.
-
-// console.log(true || false); // Output: true
-// console.log(5 > 3 || 2 > 4); // Output: true
-
-// 👉Conditional operator: ?:
-
-// The conditional operator ?: is a shorthand for an if-else statement. It returns one of two expressions based on a condition.
-
-// let age = 20;
-// let message = (age >= 18) ? 'You are an adult' : 'You are a minor';
-// console.log(message); // Output: You are an adult
-
-// 👉Assignment operators: = += -= *= /= %=
-
-// Assignment operators are used to assign values to variables and perform arithmetic operations with assignment.
-
-// let x = 5;
-// x += 3; // Equivalent to: x = x + 3;
-// console.log(x); // Output: 8
-
-// let y = 10;
-// y -= 2; // Equivalent to: y = y - 2;
-// console.log(y); // Output: 8
+// In this example, the multiply() function calculates the product of two numbers and returns it using the return statement.We call the function and store the returned value in the variable result, which we then log to the console.
 
 
 
 
+// Here are some commonly used types of functions in JavaScript:
 
+// ✅Named Functions: These are the traditional functions that have a name assigned to them.They can be defined using the function keyword followed by the function name, parameters, and function body.
 
+// function add(a, b) {
+//     return a + b;
+// }
 
+// ✅Anonymous Functions: Anonymous functions, also known as function expressions, do not have a name and are typically assigned to variables or used as arguments to other functions.
 
-// ✅Grouping operator: ()
-
-// let result = (2 + 3) * 4;
-// console.log(result); // Output: 20
-
-// ✅Member access operator: . []
-
-// let person = {
-//   name: 'John',
-//   age: 30
+// var greet = function () {
+//     console.log("Hello!");
 // };
-// console.log(person.name); // Output: John
-// console.log(person['age']); // Output: 30
 
-// ✅Computed member access operator: []
+// ✅Arrow Functions: Introduced in ECMAScript 6(ES6), arrow functions provide a concise syntax for writing functions.They are commonly used for writing shorter, one - line functions.
 
-// let prop = 'name';
-// let person = {
-//   name: 'John',
-//   age: 30
+// var multiply = (a, b) => a * b;
+
+
+// ✅Recursive Functions: Recursive functions are functions that call themselves during their execution.They are useful for solving problems that can be divided into smaller subproblems.
+
+// function factorial(n) {
+//     if (n === 0) {
+//         return 1;
+//     }
+//     return n * factorial(n - 1);
+// }
+
+// ✅Higher - Order Functions: Higher - order functions are functions that can accept other functions as arguments or return functions as their result.They are often used for creating more flexible and reusable code.
+
+// function map(arr, callback) {
+//     var mappedArr = [];
+//     for (var i = 0; i < arr.length; i++) {
+//         mappedArr.push(callback(arr[i]));
+//     }
+//     return mappedArr;
+// }
+
+
+
+
+//✅ Named functions, also known as function declarations, are the traditional way of defining functions in JavaScript.They have a name assigned to them and can be referenced and called by their name within the code.Named functions are defined using the function keyword followed by the function name, a pair of parentheses for optional parameters, and a block of code enclosed in curly braces.
+
+//     Here's an example of a named function that adds two numbers:
+
+
+// function add(a, b) {
+//     return a + b;
+// }
+
+// In the above code, the function add is defined with two parameters, a and b, which represent the numbers to be added.The function body contains the addition operation return a + b;, which returns the sum of the two numbers.
+
+// Named functions offer several advantages:
+
+// Readability and Reusability: By giving a meaningful name to a function, it becomes easier to understand its purpose and makes the code more readable.Additionally, named functions can be reused at multiple places within the code.
+
+//     Hoisting: Named functions in JavaScript are hoisted to the top of their scope.This means you can call a named function before its actual definition in the code, and JavaScript will still be able to find and execute it correctly.
+
+
+// console.log(add(3, 4)); // Outputs: 7
+
+// function add(a, b) {
+//     return a + b;
+// }
+
+// ✅Recursion: Named functions are particularly useful for implementing recursive algorithms, where a function calls itself during its execution.
+
+// function factorial(n) {
+//     if (n === 0) {
+//         return 1;
+//     }
+//     return n * factorial(n - 1);
+// }
+
+// console.log(factorial(5)); // Outputs: 120
+
+// In the above example, the factorial function calculates the factorial of a number using recursion.It calls itself with a smaller value(n - 1) until it reaches the base case (n === 0), then returns the final result by multiplying n with the factorial of n - 1.
+
+// Named functions can also be assigned to variables or passed as arguments to other functions, allowing for more flexibility in JavaScript programming.
+
+   
+// var multiply = function multiply(a, b) {
+//     return a * b;
 // };
-// console.log(person[prop]); // Output: John
 
-// ✅Function call operator: ()
+// console.log(multiply(2, 3)); // Outputs: 6
+
+// In the code above, the named function multiply is assigned to a variable, multiply, demonstrating that named functions can be used in a function expression syntax as well.
+
+// ✅ Anonymous Function :
+
+// Anonymous functions are functions that are defined without a name and can be assigned to variables or passed as arguments to other functions.They are commonly used in scenarios where you need a function for a specific task but don't necessarily need to reuse it elsewhere.
+
+// Let's start with a simple example:
 
 
-// function sayHello(name) {
-//   console.log('Hello, ' + name + '!');
+// var greet = function (name) {
+//     console.log("Hello, " + name + "!");
+// };
+
+// greet("John");
+
+// In this example, we declare a variable called greet and assign an anonymous function to it.The function takes a parameter called name and logs a greeting to the console using the console.log() function.Finally, we invoke the greet function with the argument "John," resulting in the message "Hello, John!" being printed to the console.
+
+// 👉Anonymous functions can also be passed as arguments to other functions.Here's an example that demonstrates this:
+
+
+// function doSomething(callback) {
+//     // Perform some task
+//     var result = 5 + 10;
+
+//     // Invoke the callback function
+//     callback(result);
 // }
-// sayHello('Alice'); // Output: Hello, Alice!
 
-// ✅new operator
+// doSomething(function (result) {
+//     console.log("The result is: " + result);
+// });
 
-// function Person(name) {
-//   this.name = name;
+// In this case, we have a function called doSomething that takes a callback function as an argument.Inside doSomething, we perform some task(in this case, adding 5 and 10) and then invoke the callback function, passing the result as an argument.The callback function, defined as an anonymous function when calling doSomething, receives the result as a parameter and logs it to the console.
+
+// Anonymous functions are also commonly used in event handlers.Here's an example that shows how an anonymous function can handle a button click event:
+
+
+// var button = document.getElementById("myButton");
+// button.addEventListener("click", function () {
+//     console.log("Button clicked!");
+// });
+
+// In this example, we select a button element with the ID "myButton" using document.getElementById().Then we attach an event listener using addEventListener(), specifying the "click" event and an anonymous function to handle the event.When the button is clicked, the anonymous function is executed, and the message "Button clicked!" is logged to the console.
+
+
+// ✅ Arrow Function :
+
+// Arrow Functions are a concise way to write functions in JavaScript, introduced in ES6(ECMAScript 2015).They provide a more concise syntax compared to traditional function expressions and offer some additional benefits.
+
+//     Here's the basic syntax of an Arrow Function:
+
+
+// const functionName = (parameter1, parameter2, ...) => {
+//     // Function body
+// };
+
+// Let's go through the various aspects of Arrow Functions:
+
+// 👉Single Parameter: If your function takes only one parameter, you can omit the parentheses around the parameter.
+  
+// const greet = name => {
+//     console.log(`Hello, ${name}!`);
+// };
+
+// greet('John'); // Output: Hello, John!
+
+// 👉Multiple Parameters: If your function takes multiple parameters, you'll need to wrap them in parentheses.
+
+// const add = (a, b) => {
+//     return a + b;
+// };
+
+// console.log(add(5, 3)); // Output: 8
+
+// 👉No Parameters: If your function doesn't take any parameters, you still need to include empty parentheses.
+
+// const sayHello = () => {
+//     console.log('Hello!');
+// };
+
+// sayHello(); // Output: Hello!
+
+// 👉Implicit Return: Arrow Functions provide implicit return.If the function body consists of a single expression, you can omit the curly braces and the return keyword.
+ 
+// const double = num => num * 2;
+
+// console.log(double(5)); // Output: 10
+
+// 👉Multiple Statements: If your function body requires multiple statements, you must include curly braces and explicitly return a value if needed.
+   
+// const multiply = (a, b) => {
+//     const result = a * b;
+//     return result;
+// };
+
+// console.log(multiply(3, 4)); // Output: 12
+
+// ✅Lexical 'this': Arrow Functions do not bind their own 'this' value.Instead, they inherit 'this' from the enclosing scope.This can be especially useful when dealing with callbacks and event handlers.
+ 
+// const person = {
+//     name: 'John',
+//     greet: function () {
+//         setTimeout(() => {
+//             console.log(`Hello, ${this.name}!`);
+//         }, 1000);
+//     }
+// };
+
+// person.greet(); // Output: Hello, John!
+
+// In the example above, using an Arrow Function inside setTimeout allows us to access the correct value of this(referring to the person object) within the callback function.
+
+// That's a brief overview of Arrow Functions in JavaScript! They offer a concise and convenient way to write functions, especially in scenarios where shorter, anonymous functions are required. I hope this helps you understand Arrow Functions better. Let me know if you have any further questions!
+
+
+// ✅ Recursive Function:
+
+
+// Recursive functions are functions that call themselves to solve a problem by breaking it down into smaller, more manageable subproblems.They are widely used in programming and can be particularly useful for tasks that exhibit repetitive patterns.
+
+//     Let's start with a simple example to demonstrate the concept of recursion. Consider calculating the factorial of a number. The factorial of a non-negative integer n is denoted by n! and is the product of all positive integers less than or equal to n.
+
+// Here's the recursive function for calculating the factorial:
+
+
+// function factorial(n) {
+//     // Base case: factorial of 0 or 1 is 1
+//     if (n === 0 || n === 1) {
+//         return 1;
+//     }
+
+//     // Recursive case: factorial of n is n multiplied by factorial of (n-1)
+//     return n * factorial(n - 1);
 // }
-// let john = new Person('John');
-// console.log(john.name); // Output: John
 
-// ✅Increment and decrement operators: ++ --
+// Let's break down how this recursive function works:
 
-// let count = 5;
-// count++;
-// console.log(count); // Output: 6
+// First, we define the function factorial that takes a parameter n.
+//     Next, we define a base case, which is the simplest form of the problem that doesn't require any further recursive calls. In this case, if n is 0 or 1, we return 1 since the factorial of 0 or 1 is 1.
+// If the base case is not met, we move to the recursive case.Here, we make a recursive call to factorial with the parameter n - 1 and multiply it by n.This recursive call breaks down the problem into a smaller subproblem, eventually reaching the base case.
+// The function keeps making recursive calls, each time reducing n by 1, until it reaches the base case and the recursion stops.
+//     Finally, the function returns the calculated factorial.
+//         Let's test the factorial function with a few examples:
 
-// ✅Logical NOT operator: !
+// console.log(factorial(0));  // Output: 1
+// console.log(factorial(1));  // Output: 1
+// console.log(factorial(5));  // Output: 120
+// console.log(factorial(8));  // Output: 40320
 
-// let isTrue = true;
-// let isFalse = !isTrue;
-// console.log(isFalse); // Output: false
+// In the example above, you can see that the factorial function successfully calculates the factorial of different numbers using recursion.
 
-// ✅Multiplication and division operators: * / %
+//     It's important to note that when working with recursive functions, you need to ensure that there is a termination condition (the base case) that will eventually be met. Otherwise, the function will continue making recursive calls indefinitely, leading to a stack overflow error.
 
-// let product = 5 * 3;
-// console.log(product); // Output: 15
 
-// let quotient = 10 / 2;
-// console.log(quotient); // Output: 5
 
-// let remainder = 10 % 3;
-// console.log(remainder); // Output: 1
+// ✅Higher Order Function:
 
-// ✅Addition and subtraction operators: + -
 
-// let sum = 2 + 3;
-// console.log(sum); // Output: 5
+// Higher - order functions are functions that can accept other functions as arguments or return functions as their results.They provide a powerful way to work with functions and can lead to more concise and expressive code.
 
-// let difference = 7 - 4;
-// console.log(difference); // Output: 3
+//     Let's start with an example to illustrate the concept. Suppose we have an array of numbers, and we want to double each number in the array. We can use a higher-order function called map to achieve this. Here's how it works:
 
-// ✅Relational operators: < > <= >=
 
-// console.log(5 < 10); // Output: true
-// console.log(8 >= 8); // Output: true
+// const numbers = [1, 2, 3, 4, 5];
 
-// ✅Equality operators: == !=
+// const doubledNumbers = numbers.map(function (num) {
+//     return num * 2;
+// });
 
-// console.log(5 == '5'); // Output: true
-// console.log(8 != '8'); // Output: false
+// console.log(doubledNumbers); // Output: [2, 4, 6, 8, 10]
 
-// ✅Strict equality operators: === !==
+// In the code above, map is a higher - order function that takes a callback function as an argument.The callback function is applied to each element in the array numbers, and the results are collected into a new array called doubledNumbers.The callback function takes an argument num which represents each element in the array and returns the doubled value.
 
-// console.log(5 === '5'); // Output: false
-// console.log(8 !== '8'); // Output: true
+//     Let's explore some other commonly used higher-order functions:
 
-// ✅Logical AND operator: &&
+// forEach: It applies a provided function to each element in an array.
 
-// console.log(true && false); // Output: false
-// console.log(5 > 3 && 2 < 4); // Output: true
 
-// ✅Logical OR operator: ||
+// const numbers = [1, 2, 3, 4, 5];
 
-// console.log(true || false); // Output: true
-// console.log(5 > 3 || 2 > 4); // Output: true
+// numbers.forEach(function (num) {
+//     console.log(num);
+// });
+// // Output: 1 2 3 4 5
 
-// ✅Conditional operator: ?:
 
-// let age = 20;
-// let message = (age >= 18) ? 'You are an adult' : 'You are a minor';
-// console.log(message); // Output: You are an adult
 
-// ✅Assignment operators: = += -= *= /= %=
+// filter: It creates a new array with all elements that pass a certain condition.
 
-// let x = 5;
-// x += 3; // Equivalent to: x = x + 3;
-// console.log(x); // Output: 8
+// const numbers = [1, 2, 3, 4, 5];
 
-// let y = 10;
-// y -= 2; // Equivalent to: y = y - 2;
-// console.log(y); // Output:
+// const evenNumbers = numbers.filter(function (num) {
+//     return num % 2 === 0;
+// });
 
+// console.log(evenNumbers); // Output: [2, 4]
 
+// reduce: It applies a function to an accumulator and each element in an array, resulting in a single value.
 
+// const numbers = [1, 2, 3, 4, 5];
 
-// ✅✅👉👉 Operator Precedence
+// const sum = numbers.reduce(function (acc, num) {
+//     return acc + num;
+// }, 0);
 
-// ✅Precedence of Multiplication and Addition Operators:
+// console.log(sum); // Output: 15
 
-// let result = 5 + 2 * 3;
-// console.log(result); // Output: 11
+// find: It returns the first element in an array that satisfies a condition.
+  
+// const numbers = [1, 2, 3, 4, 5];
 
-// In this example, the multiplication * operator has higher precedence than the addition + operator. So, 2 * 3 is evaluated first, resulting in 6. Then, 5 + 6 is performed, giving us the output 11.
+// const foundNumber = numbers.find(function (num) {
+//     return num > 3;
+// });
 
-// ✅Associativity of Addition Operator:
+// console.log(foundNumber); // Output: 4
 
-// let result = 10 + 5 + 2;
-// console.log(result); // Output: 17
+// These are just a few examples of higher - order functions in JavaScript.The beauty of higher - order functions is that they provide a way to abstract common patterns and make your code more declarative and readable.By understanding higher - order functions, you can take advantage of the functional programming paradigm and write more concise and maintainable code.
 
-// In this example, the addition + operator has left-to-right associativity. So, the expression is evaluated from left to right: 10 + 5 is performed first, resulting in 15. Then, 15 + 2 is performed, giving us the output 17.
 
 
-// ✅Precedence and Associativity of Comparison and Logical Operators:
 
-// let result = 10 > 5 && 5 < 8 || 2 !== 4;
-// console.log(result); // Output: true
 
-// In this example, the comparison operators (>, <, !==) have higher precedence than the logical operators (&&, ||). The expression is evaluated as follows:
 
-// 10 > 5 evaluates to true.
-// 5 < 8 evaluates to true.
-// 2 !== 4 evaluates to true.
-// The logical AND && operator has higher precedence than the logical OR || operator, so true && true is evaluated to true.
-//     Finally, true || true is evaluated to true.
 
 
-// ✅Precedence of Assignment Operators:
-// javascript
-// Copy code
-// let x = 5;
-// let y = 10;
-// let z = 15;
 
-// x += y *= z;
-// console.log(x); // Output: 155
 
-// In this example, the compound assignment operator *= has higher precedence than the addition assignment operator +=. So, y *= z is evaluated first, resulting in 150. Then, x += 150 is performed, giving us the output 155.
 
-// These examples demonstrate how the precedence and associativity of operators affect the evaluation order of expressions in real-life scenarios. Understanding these concepts is crucial for writing correct and predictable code.
 
 
 
@@ -322,133 +449,5 @@
 
 
 
-// ✅Precedence of Exponentiation and Division Operators:
 
-// let result = 4 ** 2 / 8;
-// console.log(result); // Output: 2
-// In this example, the exponentiation ** operator has higher precedence than the division / operator. So, 4 ** 2 is evaluated first, resulting in 16. Then, 16 / 8 is performed, giving us the output 2.
-
-// ✅Associativity of Assignment Operators:
-
-// let x = 5;
-// let y = 10;
-
-// x += y += 3;
-// console.log(x); // Output: 18
-// console.log(y); // Output: 13
-
-// In this example, both the addition assignment operator += and the compound assignment operator += have right-to-left associativity. The expression is evaluated as follows:
-
-// y += 3 is evaluated first, resulting in y = y + 3 = 13.
-// Then, x += 13 is performed, resulting in x = x + 13 = 18.
-
-// ✅Precedence of Bitwise Operators:
-
-// let result = 10 & 6 ^ 2;
-// console.log(result); // Output: 8
-
-// In this example, the bitwise AND & operator has higher precedence than the bitwise XOR ^ operator. So, 10 & 6 is evaluated first, resulting in 2. Then, 2 ^ 2 is performed, giving us the output 8.
-
-
-// ✅Precedence of Ternary Operator:
-
-// let age = 25;
-// let message = (age >= 18) ? 'You are an adult' : 'You are a minor';
-// console.log(message); // Output: You are an adult
-
-// This example demonstrates the precedence of the ternary operator ?:. If the condition age >= 18 is true, the value 'You are an adult' is assigned to the message variable. Otherwise, the value 'You are a minor' is assigned.
-
-// ✅Precedence and Associativity of Logical Operators:
-
-// let result = true || false && true;
-// console.log(result); // Output: true
-// In this example, the logical AND && operator has higher precedence than the logical OR || operator. So, false && true is evaluated first, resulting in false. Then, true || false is performed, giving us the output true.
-
-// These examples provide further illustrations of operator precedence and associativity in practical scenarios. Understanding these concepts is essential for writing correct and efficient code in JavaScript.
-
-
-
-
-// ✅Precedence of Bitwise Shift Operators:
-
-// let result = 16 >> 2 + 1;
-// console.log(result); // Output: 2
-
-// In this example, the addition + operator has higher precedence than the right shift >> operator. So, 2 + 1 is evaluated first, resulting in 3. Then, 16 >> 3 is performed, giving us the output 2.
-
-// ✅Associativity of Assignment Operators:
-
-// let x = 5;
-// let y = 10;
-
-// x += y -= 3;
-// console.log(x); // Output: 12
-// console.log(y); // Output: 7
-
-// In this example, both the subtraction assignment operator -= and the compound assignment operator += have right-to-left associativity. The expression is evaluated as follows:
-
-// y -= 3 is evaluated first, resulting in y = y - 3 = 7.
-// Then, x += 7 is performed, resulting in x = x + 7 = 12.
-
-
-// ✅Precedence of Bitwise XOR and Logical Operators:
-
-// let result = true ^ false || true;
-// console.log(result); // Output: true
-
-// In this example, the bitwise XOR ^ operator has higher precedence than the logical OR || operator. So, true ^ false is evaluated first, resulting in true. Then, true || true is performed, giving us the output true.
-
-// ✅Precedence of Conditional (Ternary) Operator:
-
-// let number = 15;
-// let result = number > 10 ? 'Greater than 10' : number < 10 ? 'Less than 10' : 'Equal to 10';
-// console.log(result); // Output: Greater than 10
-
-// This example demonstrates the precedence of multiple conditional (ternary) operators ?:. It checks if number is greater than 10, less than 10, or equal to 10, and assigns the corresponding message to the result variable.
-
-// ✅Precedence and Associativity of Logical NOT and Logical OR Operators:
-
-// let result = !true || false;
-// console.log(result); // Output: false
-// In this example, the logical NOT ! operator has higher precedence than the logical OR || operator. So, !true is evaluated first, resulting in false. Then, false || false is performed, giving us the output false.
-
-// These examples provide further insights into operator precedence and associativity, covering all the operators in JavaScript. Understanding these concepts is crucial for writing effective and error-free code.
-
-
-
-
-// 🏆Final Example explaining associativity and precedence in precedence table:
-
-// 👀 Home work :
-
-// let a = 2;
-// let b = 3;
-// let c = 4;
-// let d = 5;
-
-// let result = a * b + c / d % (a + b) - c;
-// console.log(result); // Output: 5.2
-
-
-// In this example, the expression a * b + c / d % (a + b) - c involves various operators with different precedence levels and associativity.
-
-//     Here's the breakdown of how the expression is evaluated:
-
-// The parentheses(a + b) are evaluated first.Since a = 2 and b = 3, (a + b) results in 5.
-
-// The modulus % operator has higher precedence than both the multiplication * and division / operators.So, c / d % (a + b) is evaluated next.
-
-//     c / d is performed, resulting in 0.8(4 divided by 5).
-// 0.8 % 5 is evaluated, which gives us 0.8 as the remainder of dividing 0.8 by 5.
-// The multiplication * operator has higher precedence than the addition + operator.So, a * b is evaluated next.
-
-// 2 * 3 is performed, resulting in 6.
-// The addition + operator is evaluated next.
-
-// 6 + 0.8 is performed, resulting in 6.8.
-//     Finally, the subtraction - operator is evaluated.
-
-// 6.8 - c is performed, resulting in 6.8 - 4, which gives us the final result 2.8.
-//     Therefore, the overall output of the expression a * b + c / d % (a + b) - c is 5.2.
-
-// This example showcases the importance of understanding operator precedence and associativity to accurately evaluate complex expressions.By knowing the rules, you can determine the order in which operations are performed, ensuring the desired results in your code.
+    
