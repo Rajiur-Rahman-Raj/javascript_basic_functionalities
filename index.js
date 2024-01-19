@@ -1,20 +1,29 @@
-// Currying is a technique where a function that takes multiple arguments is transformed into a series of functions that take one argument each.The result is a function that can be partially applied, meaning that some of its arguments can be fixed in advance, leaving a new function that takes only the remaining arguments.This can be useful when you need to reuse a function with the same arguments multiple times.
+// Optional chaining is a new feature in JavaScript that allows you to access properties and methods of an object without worrying about whether the object is null or undefined.This can be useful when you're working with complex data structures where some properties or methods might be missing or undefined.
 
-//     Here's an example of a curried function in JavaScript:
+// Here's an example of how to use optional chaining in JavaScript:
 
 
-// function add(x) {
-//     return function (y) {
-//         return x + y;
-//     };
-// }
-// This function takes one argument, x, and returns a new function that takes one argument, y, and returns the sum of x and y.Here's how you can use this function:
+// let person = {
+//     name: "John",
+//     address: {
+//         street: "123 Main St",
+//         city: "Anytown",
+//         state: "CA"
+//     }
+// };
 
-// let add5 = add(5); // This creates a new function that adds 5 to its argument.
-// console.log(add5(3)); // Output: 8
-// console.log(add5(7)); // Output: 12
-// In this example, we first create a new function add5 by calling add with the argument 5. This returns a new function that takes one argument, y, and returns the sum of 5 and y.We can then call add5 with different values for y, and each call will return the sum of 5 and the value of y.
+// console.log(person?.address?.city); // Output: "Anytown"
+// console.log(person?.address?.zipcode); // Output: undefined
+// console.log(person?.phone?.number); // Output: undefined
 
-// The benefit of using currying is that we can create reusable functions that are tailored to a specific use case. In this example, we created a function that adds 5 to its argument, but we could easily create a function that adds any other number by passing a different argument to add.
+// In this example, we have an object person that has a name property and an address property that is itself an object with street, city, and state properties.We can use optional chaining to access these properties without worrying about whether they are defined.
 
-// Another benefit of currying is that it can make it easier to compose functions.By breaking down a function into smaller functions that take one argument each, we can combine them in different ways to create new functions that perform more complex tasks.
+//     The?.operator is used to chain properties and methods together.If a property or method in the chain is undefined or null, the chain will short - circuit and return undefined instead of throwing an error.
+
+// In the first console.log statement, we use optional chaining to access the city property of the address object.Since the address object exists, the city property is successfully accessed and the value "Anytown" is returned.
+
+// In the second console.log statement, we use optional chaining to access the zipcode property of the address object.Since the zipcode property does not exist, the chain short - circuits and returns undefined.
+
+// In the third console.log statement, we use optional chaining to access the number property of the phone object, which does not exist.Since the phone object is undefined, the chain short - circuits and returns undefined.
+
+// Optional chaining can be especially useful when working with data that comes from external sources, where you can't always guarantee that all properties and methods will be present. It can also help make your code more concise and easier to read by avoiding the need for complex if statements or try-catch blocks.
